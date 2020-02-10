@@ -3,7 +3,6 @@ package it.beije.cilacap.web;
 
 import java.io.IOException;
 import java.time.LocalTime;
-import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import it.beije.cilacap.rubrica.Contatto;
 
 /**
  * Servlet implementation class TestServlet
@@ -25,7 +23,7 @@ public class TestServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		Contatto contatto = new Contatto();
+//		Contatto contatto = new Contatto();
 		LocalTime now = LocalTime.now();
 		String message = now.isBefore(LocalTime.of(16, 00)) ? "BUONGIORNO" : "BUONASERA";
 		System.out.println("sono un output");
