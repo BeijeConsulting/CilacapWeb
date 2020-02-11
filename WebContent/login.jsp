@@ -13,7 +13,7 @@
 
 		<p>inserisci di seguito i tuoi dati</p>
 
-		<form action="test" method="POST">
+		<form action="MyRubrica" method="POST">
  		 	Username: <input type="text" name="username" placeholder="<%= username %>"><br><br>
   			Password: <input type="password" name="password"><br><br>
  		 	<input type="submit" value="INVIA">
