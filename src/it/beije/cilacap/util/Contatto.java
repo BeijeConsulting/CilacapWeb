@@ -1,31 +1,31 @@
 package it.beije.cilacap.util;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="rubrica")
+//import javax.persistence.Column;
+//import javax.persistence.Entity;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.GenerationType;
+//import javax.persistence.Id;
+//import javax.persistence.Table;
+//
+//@Entity
+//@Table(name="rubrica")
 public class Contatto {
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
+//	@Id
+//	@GeneratedValue(strategy=GenerationType.IDENTITY)
+//	@Column(name="id")
 	private Integer id;
 	
-	@Column(name="nome")
+//	@Column(name="nome")
 	private String nome;
 
-	@Column(name="cognome")
+//	@Column(name="cognome")
 	private String cognome;
 
-	@Column(name="telefono")
+//	@Column(name="telefono")
 	private String telefono;
 
-	@Column(name="email")
+//	@Column(name="email")
 	private String email;
 	
 	
