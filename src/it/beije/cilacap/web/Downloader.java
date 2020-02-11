@@ -23,8 +23,8 @@ public class Downloader extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//File file = new File("C:\\temp\\im_going_to_ignore_you.png");
-		File file = new File("C:\\javalib\\mysql-connector-java-8.0.15.jar");
+		File file = new File("C:\\temp\\im_going_to_ignore_you.png");
+//		File file = new File("C:\\javalib\\mysql-connector-java-8.0.15.jar");
 		byte[] fileContent = Files.readAllBytes(file.toPath());
 		
 //		response.setContentType("image/png");
