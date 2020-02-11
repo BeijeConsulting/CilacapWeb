@@ -39,7 +39,7 @@ public class Contatto {
 	}
 
 	public String toString(int i) {
-		return "Contatto "+i+"<hr>nome=" + nome + "<br /> cognome=" + cognome + "<br />  telefono=" + telefono + "<br />  email=" + email +"<hr>";
+		return "<hr>nome=" + nome + "<br /> cognome=" + cognome + "<br />  telefono=" + telefono + "<br />  email=" + email +"<hr>";
 	}
 
 }
