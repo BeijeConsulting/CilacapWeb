@@ -1,4 +1,4 @@
-package it.beije.cilacap.web;
+package it.beije.cilacap.web.ivo;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -31,6 +31,7 @@ public class XMLservlet extends HttpServlet {
 
 		response.setContentType("application/xml");
 		response.getWriter().append(builder.toString());
+		
 
 	}
 
