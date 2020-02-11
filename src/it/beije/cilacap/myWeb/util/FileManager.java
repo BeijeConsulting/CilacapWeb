@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class TextFileManager {
+public class FileManager {
 
 //	public static String readFileContent(String filePath) throws IOException {
 //		File file = new File(filePath);

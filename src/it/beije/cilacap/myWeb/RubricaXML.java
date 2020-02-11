@@ -14,13 +14,13 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 import it.beije.cilacap.myWeb.util.ContattoWeb;
-import it.beije.cilacap.myWeb.util.MyRubrica;
+import it.beije.cilacap.myWeb.util.ReadFromFile;
 
 /**
  * Servlet implementation class TestServlet
  */
-@WebServlet("/test")
-public class MyServlet extends HttpServlet {
+@WebServlet("/rubricaXML")
+public class RubricaXML extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -45,7 +45,7 @@ public class MyServlet extends HttpServlet {
 		// legge da XML
 		List<ContattoWeb> listaContatti = null;
 		try {
-			listaContatti = MyRubrica.caricaArrayListDiContattiFromXML("C:\\Users\\Padawan04\\Desktop\\newRubrica.xml");
+			listaContatti = ReadFromFile.caricaArrayListDiContattiFromXML("C:\\Users\\Padawan04\\Desktop\\newRubrica.xml");
 		} catch (ParserConfigurationException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -106,7 +106,7 @@ public class MyServlet extends HttpServlet {
 //		StringBuilder builder = new StringBuilder("<!DOCTYPE html><html><head><title>CILACAP</title></head>");
 //		builder.append("<body><b>").append(message).append(" CILACAP").append("</b></body></html>");
 		
-		//response.setContentType("text/html");
+		//response.setContentType("application/xml");
 		response.getWriter().append(html.toString());
 	}
 
