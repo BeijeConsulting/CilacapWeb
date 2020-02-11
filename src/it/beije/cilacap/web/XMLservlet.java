@@ -20,7 +20,7 @@ public class XMLservlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		FileReader reader = new FileReader("C:\\temp\\domande.xml");
+		FileReader reader = new FileReader("C:\\Users\\Padawan14\\git\\Cilacap\\xml\\database.xml");
 		
 		int c;
 		StringBuilder builder = new StringBuilder();
