@@ -42,6 +42,7 @@ public class CSVServlet extends HttpServlet {
 		builder.append("</h1>");
 		builder.append("<hr>");
 		builder.append("<hr>");
+		builder.append("<img src=\"C:\\Users\\Padawan13\\git\\CilacapWeb\\WebContent\\WEB-INF\\WIN_20200129_15_08_11_Pro.jpg\">");
 		System.out.println("success ! !");
 		
 		//response.setContentType("text/html");
