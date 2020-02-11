@@ -1,4 +1,4 @@
-package it.beije.cilacap.web;
+package it.beije.cilacap.provaRubrica;
 
 
 import java.io.IOException;
@@ -12,9 +12,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import it.beije.cilacap.provaRubrica.Contatto;
-import it.beije.cilacap.provaRubrica.DBtools;
 
 
 
