@@ -21,7 +21,7 @@ public class XMLservlet extends HttpServlet {
 	@SuppressWarnings("resource")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		FileReader reader = new FileReader("C:\\temp\\domande.xml");
+		FileReader reader = new FileReader("C:\\Users\\Padawan13\\git\\CilacapWeb\\WebContent\\WEB-INF\\xml\\nuovoXmlContatti.xml");
 		
 		int c;
 		StringBuilder builder = new StringBuilder();
