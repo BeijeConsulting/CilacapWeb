@@ -9,6 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
 
 import it.beije.cilacap.myWeb.util.ContattoWeb;
 import it.beije.cilacap.myWeb.util.MyRubrica;
@@ -29,15 +32,33 @@ public class MyServlet extends HttpServlet {
 		html.append("<html>\r\n" + 
 				"<head>\r\n" + 
 				"	<title>My Rubrica</title>\r\n" + 
-				"</head>\r\n" + 
+				"</head>\r" + 
 				"<body>\r\n" + 
 				"	<div style=\"padding: 10px; background: grey; color: white;\">\r\n" + 
 				"		My Rubrica\r\n" + 
 				"	</div>\r\n" + 
 				"	<div style=\"padding: 10px; borde: 1px solid grey;\">");
 		
-		List<ContattoWeb> listaContatti = MyRubrica.caricaArrayListDiContattiFromCSV("C:\\Users\\Padawan04\\Desktop\\newRubrica.csv");
+		// legge da CSV
+		//List<ContattoWeb> listaContatti = MyRubrica.caricaArrayListDiContattiFromCSV("C:\\Users\\Padawan04\\Desktop\\newRubrica.csv");
 		
+		// legge da XML
+		List<ContattoWeb> listaContatti = null;
+		try {
+			listaContatti = MyRubrica.caricaArrayListDiContattiFromXML("C:\\Users\\Padawan04\\Desktop\\newRubrica.xml");
+		} catch (ParserConfigurationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SAXException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		// stampa contatti in pagina html
 		for(ContattoWeb c : listaContatti) {
 			html.append("<div style=\"font-weight: bold; width: 180px; float: left;\">\r\n" + 
 					"Nome: " + 
