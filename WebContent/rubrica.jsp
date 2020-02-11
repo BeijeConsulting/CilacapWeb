@@ -15,12 +15,17 @@
 	<%!String email = "email";%>
 
 
-	<form action="RubricaServlet" method="POST">
+	<form action="InsertServlet" method="POST">
 		Nome:<input type="text" name="nome" placeholder="<%=nome%>"><br>
 		<br> Cognome: <input type="text" name="cognome"  placeholder="<%=cognome%>"><br>
 		<br> Telefono: <input type="text" name="telefono"  placeholder="<%=telefono%>"><br>
 		<br> Email: <input type="text" name="email"  placeholder="<%=email%>"><br>
 		<br> <input type="submit" value="Salva">
+	</form>
+	
+	<form action="DatabaseServlet" method="POST">
+		
+		<br> <input type="submit" value="Visualizza contatti presenti dal database">
 	</form>
 
 </body>

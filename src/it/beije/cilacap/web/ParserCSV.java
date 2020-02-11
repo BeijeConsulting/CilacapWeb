@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class ParserCSV {
 	public static String readFileContent(String filePath) throws IOException {
 		File file = new File(filePath);
@@ -63,7 +62,7 @@ public class ParserCSV {
 	}
 
 	public static void writeInFileCSV(List<Contatto> contatti, File f1) throws IOException {
-	
+
 		StringBuilder contenuto = new StringBuilder();
 		for (Contatto contatto : contatti) {
 			contenuto.append(contatto.getCognome() + ";");
@@ -71,21 +70,22 @@ public class ParserCSV {
 			contenuto.append(contatto.getTelefono() + ";");
 			contenuto.append(contatto.getEmail() + "\n");
 		}
-	
+
 		String intestazione = "COGNOME;NOME;TELEFONO;EMAIL\n";
 		String nuovoContenuto = contenuto.toString();
-	
+
 		if (f1.exists()) {
 			String contenutoFile = readFileContent(f1);
-			System.out.println(contenutoFile);
 			String stringContenutoFile = intestazione
 					.concat(contenutoFile.substring(contenutoFile.indexOf('\n') + 1).concat(nuovoContenuto));
 			writeFileContent(stringContenutoFile, f1);
 		} else {
 			String contenuto2 = intestazione.concat(nuovoContenuto);
 			writeFileContent(contenuto2, f1);
-	
+
 		}
 	}
-	
+
+
+
 }

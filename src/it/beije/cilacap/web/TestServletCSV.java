@@ -36,7 +36,7 @@ public class TestServletCSV extends HttpServlet {
 		int i=0;
 		for(Contatto c: listContatto) {
 			i++;
-			stringaContatti.append(c.toString(i));
+			stringaContatti.append(c.toString());
 		}
 		System.out.println("Export eseguito");
 		StringBuilder builder = new StringBuilder("<!DOCTYPE html><html><head><title>CILACAP</title></head>");
