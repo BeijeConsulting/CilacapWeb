@@ -42,6 +42,7 @@ public class TestServlet extends HttpServlet {
 			builder.append("nome: " + c.getNome()).append(" cognome: " + c.getCognome()).append(" telefono: " +c.getTelefono()).append(" email: " +c.getEmail()).append("</br>");
 			
 		}
+		response.getWriter().append(builder.toString());
 		//StringBuilder builder = new StringBuilder("<!DOCTYPE html><html><head><title>CILACAP</title></head>");
 		//builder.append("<body><b>").append(message).append(" CILACAP").append("</b></body></html>");
 
@@ -52,7 +53,7 @@ public class TestServlet extends HttpServlet {
 	 *      response)
 	 */
 	}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	/*protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
@@ -63,6 +64,6 @@ public class TestServlet extends HttpServlet {
 		response.setContentType("text/html");
 		response.getWriter().append("username : ").append(username).append("<br>")
 			.append("password : ").append(password);
-	}
+	}*/
 
 }
