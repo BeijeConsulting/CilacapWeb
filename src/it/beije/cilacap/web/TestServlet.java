@@ -27,12 +27,11 @@ public class TestServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		List<String> list = t.readFileRows("C:\\Users\\Padawan02\\git\\CilacapWeb\\WebContent\\csvWeb\\rubrica1.csv");
 		List<Contatto> contatti = c.convertiInOggetto(list);
-
+ 
 		Contatto contatto = new Contatto();
 		// LocalTime now = LocalTime.now();
 		// String message = now.isBefore(LocalTime.of(16, 00)) ? "BUONGIORNO" :
@@ -47,17 +46,23 @@ public class TestServlet extends HttpServlet {
 		//builder.append("<body><b>").append(message).append(" CILACAP").append("</b></body></html>");
 
 		// response.setContentType("text/html");
-		response.getWriter().append(builder.toString());
-	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		
+		System.out.println("username : " + username);
+		System.out.println("password : " + password);
+		
+		response.setContentType("text/html");
+		response.getWriter().append("username : ").append(username).append("<br>")
+			.append("password : ").append(password);
 	}
 
 }
