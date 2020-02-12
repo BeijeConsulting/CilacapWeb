@@ -16,19 +16,17 @@ public class addContatto extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		Contatto c =(Contatto)request.getSession().getAttribute("contatto");
+		
+		Utils.insertContattoJpa(c);
+		
+		request.getSession().setAttribute("contatto",null);
+		response.getWriter().append("<a href=\"index_delloste.jsp\">TORNA ALLA HOMEPAGE</a>");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		Contatto c = new Contatto();
 		
-		c.setNome(request.getParameter("nome"));
-		c.setCognome(request.getParameter("cognome"));
-		c.setTelefono(request.getParameter("telefono"));
-		c.setEmail(request.getParameter("email"));
-		
-		Utils.insertContattoJpa(c);
 		
 		
 	}

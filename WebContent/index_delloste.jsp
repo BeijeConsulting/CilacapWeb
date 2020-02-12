@@ -5,18 +5,20 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>INSERIMENTO NUOVO CONTATTO</title>
+<title>FORM CONTATTO</title>
 </head>
 <body>
+<jsp:useBean id="contatto" class="it.beije.cilacap.rubrica.Contatto" scope="session"/>
 
 <p>INSERISCI IL CONTATTO </p>
 
-<form action="addContatto" method="post">
-Nome: <input type= "text" name="nome" placeholder="es. Niccolò">
-Cognome: <input type= "text" name="cognome" placeholder="es. Farinella">
-Telefono: <input type= "text" name="telefono" placeholder="es. 3422554525">
-Email: <input type= "text" name="email" placeholder="es. nichi@gggg.com">
-<input type="submit" value="CONFERMA">
+<form action="confirm.jsp" method="post">
+Nome: <input type= "text" name="nome" value="<%= contatto.getNome()!=null ? contatto.getNome():""%>" placeholder="es. Stefano"><br>
+Cognome: <input type= "text" name="cognome" value="<%= contatto.getCognome()!=null ? contatto.getCognome():""%>" placeholder="es. Brunato"><br>
+Telefono: <input type= "text" name="telefono" value="<%= contatto.getTelefono()!=null ? contatto.getTelefono():""%>" placeholder="es. 3422554525"><br>
+Email: <input type= "text" name="email" value="<%= contatto.getEmail()!=null ? contatto.getEmail():""%>" placeholder="es. stebru@gmail.com"><br>
+<br>
+<input type="submit" value="CONTINUA">
 
 </form>
 
