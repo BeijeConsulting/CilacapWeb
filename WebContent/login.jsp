@@ -8,11 +8,6 @@
 </head>
 <body>
 
-<<<<<<< HEAD
-<% String username = "es. Gabriele"; %>
-
-=======
->>>>>>> refs/remotes/origin/master
 <h1>LOGIN PAGE</h1>
 <h6>SESSION ID : <%= session.getId() %></h6>
 
