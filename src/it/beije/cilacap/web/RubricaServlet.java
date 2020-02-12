@@ -48,5 +48,12 @@ public class RubricaServlet extends HttpServlet{
 				.append("Cognome : ").append(contatto.getCognome()).append("<br>")
 				.append("Telefono : ").append(contatto.getTelefono()).append("<br>")
 				.append("Email : ").append(contatto.getEmail());
+			
+			try {
+				DBtools.insertContatto(contatto);
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
