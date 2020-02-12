@@ -49,22 +49,26 @@ public class RubricaServlet extends HttpServlet{
 			
 			System.out.println(contatto);	
 			
-//			try {
-//				DBtools.insertContatto(contatto);
-//			} catch (ClassNotFoundException e1) {
-//				// TODO Auto-generated catch block
-//				e1.printStackTrace();
-//			}
-//			
+			try {
+				DBtools.insertContatto(contatto);
+			} catch (ClassNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
 //			response.setContentType("text/html");
 //			response.getWriter().append("Contatto").append("<br><br>")
 //				.append("Nome : ").append(contatto.getNome()).append("<br>")
 //				.append("Cognome : ").append(contatto.getCognome()).append("<br>")
 //				.append("Telefono : ").append(contatto.getTelefono()).append("<br>")
-//				.append("Email : ").append(contatto.getEmail()).append("<br><br>")
-//				.append("<input type=").append('"').append("submit").append('"')
-//				.append("value=").append('"').append("Conferma Inserimento").append('"').append(">");	
+//				.append("Email : ").append(contatto.getEmail());
 			
+			userBean = new User();
+			request.getSession().setAttribute("userBean", userBean);
+			
+			response.sendRedirect("CilacapWeb/WebContent/SchermataInserimentoCredenziali.jsp");
+			
+			//vedi qua
 			
 		}
 }
