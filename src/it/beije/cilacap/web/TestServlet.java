@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import it.beije.cilacap.rubrica.Contatto;
+
 
 /**
  * Servlet implementation class TestServlet
@@ -22,7 +24,11 @@ public class TestServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+<<<<<<< HEAD
 //		Contatto contatto = new Contatto();
+=======
+		
+>>>>>>> refs/remotes/origin/master
 		LocalTime now = LocalTime.now();
 		String message = now.isBefore(LocalTime.of(16, 00)) ? "BUONGIORNO" : "BUONASERA";
 		System.out.println("sono un output");
@@ -38,8 +44,16 @@ public class TestServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		
+		System.out.println("username : " + username);
+		System.out.println("password : " + password);
+		
+		response.setContentType("text/html");
+		response.getWriter().append("username : ").append(username).append("<br>")
+			.append("password : ").append(password);
 	}
 
 }
