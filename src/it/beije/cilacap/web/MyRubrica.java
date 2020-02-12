@@ -2,6 +2,9 @@ package it.beije.cilacap.web;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +16,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.Query;
 
 //Qui farò le elaborazione.
 @WebServlet("/MyRubrica")
@@ -39,17 +50,29 @@ public class MyRubrica extends HttpServlet
 		String telefono = request.getParameter("telefono");
 		String email = request.getParameter("email");
 		
-		if (nome != null && cognome != null && telefono != null) 
-		{
-			Contatto contatto = new Contatto();
-			contatto.setNome(nome);
-			contatto.setCognome(cognome);
-			contatto.setTelefono(telefono);
-			contatto.setEmail(email);
+		Contatto contatto = new Contatto();
+		contatto.setNome(nome);
+		contatto.setCognome(cognome);
+		contatto.setTelefono(telefono);
+		contatto.setEmail(email);
 
-			HttpSession session = request.getSession();
-			session.setAttribute("contatto", contatto);
-		}
-			response.sendRedirect("authMyRubrica.jsp");
+		HttpSession hsession = request.getSession();
+		hsession.setAttribute("contatto", contatto);
+		
+		
+		
+//		Configuration configuration = new Configuration();
+//		configuration = configuration.configure()
+//				.addAnnotatedClass(Contatto.class);
+//		
+//		SessionFactory factory = configuration.buildSessionFactory();
+//		Session session = factory.openSession();
+//		
+//		Transaction transaction = session.beginTransaction();
+//		session.save(contatto);
+//		transaction.commit();
+//		session.close();
+		
+		response.sendRedirect("authMyRubrica.jsp");
 	}
 }
