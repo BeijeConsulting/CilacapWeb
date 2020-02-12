@@ -16,7 +16,7 @@ public class WriteCSV {
 		MetodiCSV csv=new MetodiCSV();
 		List <ContattoWeb> contatto=new ArrayList<>();
         contatto=csv.scheletroCsv();
-        csv.scrivisuFile(contatto, separatore);
+//        csv.scrivisuFile(contatto, separatore);
 //		rubrica.settoFile();
 //		rubrica.fileXML();
 //		rubrica.leggiconHibernate();

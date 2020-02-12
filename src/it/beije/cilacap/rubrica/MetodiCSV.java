@@ -67,7 +67,7 @@ public class MetodiCSV {
 		}
 		
 	    //scrivo i contatti sul file csv
-		public void scrivisuFile(ArrayList<ContattoWeb> contenuto,String separatore) throws IOException {
+		public void scrivisuFile(List<ContattoWeb> contenuto,String separatore) throws IOException {
 
 			TextFileManager tfm=new TextFileManager();
 

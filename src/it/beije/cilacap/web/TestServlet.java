@@ -82,12 +82,15 @@ public class TestServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		String username = (String) request.getSession().getAttribute("username");
+		String who = username != null ? username : "CILACAP";
+		
 		LocalTime now = LocalTime.now();
 		String message = now.isBefore(LocalTime.of(16, 00)) ? "BUONGIORNO" : "BUONASERA";
 		System.out.println("sono un output");
 		
 		StringBuilder builder = new StringBuilder("<!DOCTYPE html><html><head><title>CILACAP</title></head>");
-		builder.append("<body><b>").append(message).append(" CILACAP").append("</b></body></html>");
+		builder.append("<body><b>").append(message).append(" ").append(who).append("</b></body></html>");
 		
 		//response.setContentType("text/html");
 		response.getWriter().append(builder.toString());

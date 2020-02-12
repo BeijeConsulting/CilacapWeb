@@ -1,5 +1,6 @@
 package src.it.beije.cilacap.rubrica;
-import it.beije.cilacap.rubrica.ParserXML;
+import src.it.beije.cilacap.rubrica.ParserXML;
+
 
 
 
@@ -121,7 +122,7 @@ public class ContattoWeb extends MetodiCSV {
 		lista=ParserXML.getContattiFromFile("C:\\Users\\Padawan05\\Desktop\\Esercizio\\rubrica.xml");
 //		try {
 		ContattoWeb c=new ContattoWeb();
-		c.settoFile(lista);
+		lista=c.settoFile(lista,";");
 		
 //		}catch(SAXParseException e) {
 //			System.out.println("a");
