@@ -46,21 +46,9 @@ public class MyRubrica extends HttpServlet
 	{
 		//doGet(request, response);
 		Contatto contatto = (Contatto)request.getSession().getAttribute("contattoBean");
-		
+		System.out.println("Procedo con salvataggio...");
+		JPDBtools.insertInJPADB(contatto);
 		response.sendRedirect("authMyRubrica.jsp");
 		
-//		Configuration configuration = new Configuration();
-//		configuration = configuration.configure()
-//				.addAnnotatedClass(Contatto.class);
-//		
-//		SessionFactory factory = configuration.buildSessionFactory();
-//		Session session = factory.openSession();
-//		
-//		Transaction transaction = session.beginTransaction();
-//		session.save(contatto);
-//		transaction.commit();
-//		session.close();
-		
-		response.sendRedirect("authMyRubrica.jsp");
 	}
 }
