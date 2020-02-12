@@ -1,4 +1,4 @@
-package it.beije.cilacap.web;
+package it.beije.cilacap.web.rubrica;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import it.beije.cilacap.rubrica.Contatto;
 import it.beije.cilacap.rubrica.ParserJPDB;
@@ -45,10 +46,12 @@ public class AddContatto extends HttpServlet {
 		ArrayList<Contatto> lista = new ArrayList<Contatto>();
 		lista.add(con);
 		System.out.println(con);
-		ParserJPDB.writeContattiInJPDB(lista);
-		System.out.println("ho inserito");
+		
 		response.setContentType("text/html");
 		response.getWriter().append("Hai salvato i dati di ").append(nome+ " ").append(cognome);
+		HttpSession session = request.getSession();
+		session.setAttribute("contatto", con);
+		response.sendRedirect("conferma.jsp");
 	}
 
 }
