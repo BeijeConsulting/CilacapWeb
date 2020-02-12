@@ -1,4 +1,4 @@
-<%@page import="it.beije.cilacap.web.User"%>
+<%@page import="it.beije.cilacap.web.ivo.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<jsp:useBean id="user" class="it.beije.cilacap.web.User" scope="session" />
+<jsp:useBean id="user" class="it.beije.cilacap.web.ivo.User" scope="session" />
 
 <%
 //	User user = (User) session.getAttribute("user");
