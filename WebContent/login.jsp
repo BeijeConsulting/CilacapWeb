@@ -13,7 +13,7 @@
 <h1>LOGIN PAGE</h1>
 <h6>Cilacap</h6>
 
-<p>inserisci di seguito i tuoi dati</p>
+<p>Inserisci di seguito i tuoi dati</p>
 
 <form action="test" method="POST">
   Username: <input type="text" name="username" placeholder="<%= username %>"><br><br>

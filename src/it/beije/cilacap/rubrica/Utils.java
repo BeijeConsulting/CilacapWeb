@@ -5,10 +5,15 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.Transformer;
@@ -37,8 +42,6 @@ public class Utils {
         reader.close();
         return list;
         }
-
-
 	public static void writeToCsvFile(List<String[]> thingsToWrite, String csvSplitBy, String fileName){
 	//Riceve una lista di array da scrivere nel CSV.
     try (FileWriter writer = new FileWriter(fileName)){
@@ -55,7 +58,6 @@ public class Utils {
         e.printStackTrace();
     }
 }
-
     public List<String[]> setContatto(String[]intestazioneFile, List<String[]> lc){
     // Riceve la stringa di come'è intestato il CSV in cui bisogna aggiungere il contatto e la lista dei contatti già presenti nel CSV a cui bisogna accodare i nuovi contatti.
 
@@ -180,15 +182,13 @@ public class Utils {
 			transformer.transform(source, result);
 
 			System.out.println("File saved!");
-		}
-	  
+		}	  
     public static List<Contatto> getContattiFromFileXml(String pathfile) throws Exception {
 	    	//Di Ivo
 			File file = new File(pathfile);
 			
 			return getContattiFromFileXml(file);
 		}
-
 	public static List<String[]> getCsvListFromXmlFile(List<Contatto> xmlList){
 			List<String[]> csvList = new ArrayList<String[]>();
 			String[]array= new String[4];
@@ -202,7 +202,6 @@ public class Utils {
 			return csvList;
 			
 			}
-		
     public static List<Contatto> getXmlListFromCsvFile(String csvSplitBy, String filepath) throws IOException{
      List<String[]> ls= new ArrayList<>();	
      List<Contatto> lc= new ArrayList<Contatto>();
@@ -238,6 +237,94 @@ public class Utils {
      //A questo punto dovrei avere la mia lista contatto con tutti i contatti della lista del csv.
      return lc;
      }
+    public static  void insertContattoJpa(Contatto contatto ) {
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("CilacapWeb");
+		EntityManager entityManager = factory.createEntityManager();
+		entityManager.getTransaction().begin();
+		entityManager.persist(contatto);
+		entityManager.getTransaction().commit();
+		entityManager.close();
+		System.out.println("Contatto inserito correttamente");
+	}
+    public static void leggiContattiJpa()throws ClassNotFoundException,SQLException{
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("CilacapUnit");
+		EntityManager entityManager = factory.createEntityManager();
+		String jpql= "select c from Contatto as c";
+		TypedQuery<Contatto> query=entityManager.createQuery(jpql,Contatto.class);
+		List<Contatto> contatti= query.getResultList();
+		System.out.println(contatti.size());
+		for (Contatto contatto: contatti) {
+			System.out.println("id :"+contatto.getId());
+			System.out.println("nome : "+contatto.getNome());
+			System.out.println("congnome : "+contatto.getCognome());
+			System.out.println("telefono : "+contatto.getTelefono());
+			System.out.println("email : "+contatto.getEmail());
+			System.out.println(contatto.getClass());
+			entityManager.close();
+		}
+	}
+    public static void updateContattoJpa(Integer idContatto) {	
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("CilacapUnit");
+		EntityManager entityManager = factory.createEntityManager();
+		entityManager.getTransaction().begin();
+		Scanner read=new Scanner(System.in);
+		Contatto contatto = entityManager.find(Contatto.class, idContatto);
+		System.out.println(contatto);
+		System.out.println("Vuoi modificare il nome del contatto?S/N?");
+		if(read.next().equalsIgnoreCase("s")) {
+			System.out.println("inserisci il nuovo nome");
+			String nome= read.next();
+			entityManager.createQuery("update Contatto set nome ="+ nome + " where id="+idContatto).executeUpdate();
+		}
+		System.out.println("Vuoi modificare il cognome del contatto?S/N?");
+		if(read.next().equalsIgnoreCase("s")) {
+			System.out.println("inserisci il nuovo cognome");
+			String cognome= read.next();
+			entityManager.createQuery("update Contatto set cognome ="+ cognome + " where id="+idContatto).executeUpdate();
+		}
+		System.out.println("Vuoi modificare il telefono del contatto?S/N?");
+		if(read.next().equalsIgnoreCase("s")) {
+			System.out.println("inserisci il nuovo numero di telefono");
+			String telefono= read.next();
+			entityManager.createQuery("update Contatto set telefono =" + telefono + " where id=" + idContatto).executeUpdate();
+		}
+		System.out.println("Vuoi modificare la mail del contatto?S/N?");
+		if(read.next().equalsIgnoreCase("s")) {
+			System.out.println("inserisci la nuova mail");
+			String mail=read.next();
+			entityManager.createQuery("update Contatto set email = " + mail + " where id="+ idContatto).executeUpdate();
+		}
+		System.out.println("Confermate l'aggionramento del contatto?S/N?");
+		if(read.next().equalsIgnoreCase("s")) {
+			entityManager.getTransaction().commit();
+			entityManager.close();
+			read.close();
+			System.out.println("Contatto aggiornato!!");
+		}
+		else {
+			entityManager.getTransaction().rollback();
+			entityManager.close();
+			read.close();
+			System.out.println("Aggiornamento contatto annullato!!");
+		}
+		}
+	public static void deleteContattoJpa(Integer idContatto){
+		Scanner read = new Scanner(System.in);
+		String jpql= "delete from Contatto c where c.id= "+ idContatto;
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("CilacapUnit");
+		EntityManager entityManager = factory.createEntityManager();
+		entityManager.getTransaction().begin();
+		Contatto contatto = entityManager.find(Contatto.class, idContatto);
+		System.out.println(contatto);
+		System.out.println("Sei sicuro di volere eliminare il contatto? S/N?");
+		if(read.next().equalsIgnoreCase("s")) {
+			entityManager.createQuery(jpql).executeUpdate();
+			System.out.println("Contatto cancellato con successo");
+			entityManager.getTransaction().commit();
+			entityManager.close();
+			read.close();
+		}
+	}
 }
 
 
