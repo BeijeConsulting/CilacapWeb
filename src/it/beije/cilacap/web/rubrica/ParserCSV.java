@@ -1,4 +1,4 @@
-package it.beije.cilacap.web;
+package it.beije.cilacap.web.rubrica;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import it.beije.cilacap.web.Contatto;
+import it.beije.cilacap.web.rubrica.Contatto;
 
 public class ParserCSV {
 	public static String readFileContent(String filePath) throws IOException {
