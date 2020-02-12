@@ -1,31 +1,31 @@
 package it.beije.cilacap.utils;
 
-//import javax.persistence.Column;
-//import javax.persistence.Entity;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.GenerationType;
-//import javax.persistence.Id;
-//import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-//@Entity
-//@Table(name="contatti")
+@Entity
+@Table(name="contatti")
 public class Contatto {
 
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.IDENTITY)
-//	@Column(name="id")
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
 	private Integer id;
 	
-//	@Column(name="nome")
+	@Column(name="nome")
 	private String nome;
 
-//	@Column(name="cognome")
+	@Column(name="cognome")
 	private String cognome;
 
-//	@Column(name="telefono")
+	@Column(name="telefono")
 	private String telefono;
 
-//	@Column(name="email")
+	@Column(name="email")
 	private String email;
 	
 	
@@ -37,6 +37,8 @@ public class Contatto {
 	}
 
 	public String getNome() {
+		if(nome==null)
+			return "";
 		return nome;
 	}
 	public void setNome(String nome) {
@@ -44,6 +46,8 @@ public class Contatto {
 	}
 	
 	public String getCognome() {
+		if(cognome==null)
+			return "";
 		return cognome;
 	}
 	public void setCognome(String cognome) {
@@ -51,6 +55,8 @@ public class Contatto {
 	}
 	
 	public String getTelefono() {
+		if(telefono==null)
+			return "";
 		return telefono;
 	}
 	public void setTelefono(String telefono) {
@@ -58,6 +64,8 @@ public class Contatto {
 	}
 	
 	public String getEmail() {
+		if(email==null)
+			return "";
 		return email;
 	}
 	public void setEmail(String email) {

@@ -1,4 +1,4 @@
-package it.beije.cilacap.web.rubrica;
+package it.beije.cilacap.utils;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,6 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import it.beije.cilacap.utils.Contatto;
 
 /**
  * Servlet implementation class Salva
@@ -17,13 +19,13 @@ public class Salva extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("SALVO CONTATTO?");
 		
-		Contatto contatto = (Contatto)request.getSession().getAttribute("contatto");
+		Contatto contatto = (Contatto)request.getSession().getAttribute("userBean");
 		if (contatto != null) {
 			System.out.println("procedo con salvataggio...");
 			
-			response.sendRedirect("./rubrica/conferma.jsp");
+			response.sendRedirect("conferma.jsp");
 		} else {
-			response.sendRedirect("./rubrica/formcontatto.jsp");
+			response.sendRedirect("form.jsp");
 		}
 	}
 
