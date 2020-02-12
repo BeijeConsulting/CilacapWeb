@@ -26,6 +26,7 @@
 		Email: <jsp:getProperty name="contattoBean" property="email"/><br>
 		
 		<a href="MyRubrica.jsp">Inserisci nuovo contatto</a>
+		<a href="MyRubrica">Conferma</a>
 
 	</body>
 </html>

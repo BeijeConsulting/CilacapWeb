@@ -8,7 +8,7 @@
 		<title>MyRubrica</title>
 	</head>
 	<body>
-		<form action="MyRubrica" method="POST">
+		<form action="authMyRubrica.jsp" method="POST">
 			<p>Form MyRubrica</p>
 			Nome:<input type="text" name="param_nome" placeholder="Inserisci nome"><br>
 			Cognome:<input type="text" name="param_cognome"><br>

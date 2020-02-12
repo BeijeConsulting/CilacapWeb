@@ -45,21 +45,9 @@ public class MyRubrica extends HttpServlet
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		//doGet(request, response);
-		String nome = request.getParameter("nome");
-		String cognome = request.getParameter("cognome");
-		String telefono = request.getParameter("telefono");
-		String email = request.getParameter("email");
+		Contatto contatto = (Contatto)request.getSession().getAttribute("contattoBean");
 		
-		Contatto contatto = new Contatto();
-		contatto.setNome(nome);
-		contatto.setCognome(cognome);
-		contatto.setTelefono(telefono);
-		contatto.setEmail(email);
-
-		HttpSession hsession = request.getSession();
-		hsession.setAttribute("contatto", contatto);
-		
-		
+		response.sendRedirect("authMyRubrica.jsp");
 		
 //		Configuration configuration = new Configuration();
 //		configuration = configuration.configure()
