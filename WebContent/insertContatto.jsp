@@ -1,6 +1,5 @@
-<%@page import="it.beije.cilacap.esercizi.myRubrica.JpaRubricaUtils"%>
 <%@page import="java.util.*"%>
-<%@page import="it.beije.cilacap.esercizi.myRubrica.Contatto2"%>
+<%@page import="it.beije.cilacap.esercizi.myRubrica.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -25,7 +24,8 @@
 		List<Contatto2> lista = new ArrayList<Contatto2>();
 		lista.add(contatto);
 		
-		JpaRubricaUtils.writeJPAListOfContactsIntoDB(lista);
+		// Con Hibernate funziona correttamente!!!
+		HibernateRubricaUtil.writeListOfContactsOnDB(lista);
 		
 	%>
 	<div style="border: 4px solid green; padding: 15px; color: green; font-size: large;">Inserimento avvenuto con successo!!!</div>
