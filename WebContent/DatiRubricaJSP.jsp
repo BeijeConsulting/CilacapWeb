@@ -19,6 +19,8 @@
 <p> Telefono: <input type="text" name="telefono"><br>
 <p> Email: <input type="text" name="email" placeholder="<%= email %>"><br><br><br>
 
+
+
 <input type="submit" value="SALVA CONTATTO IN RUBRICA">
 
 </head>

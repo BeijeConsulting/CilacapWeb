@@ -9,7 +9,7 @@
 <body>
 
 <%! String username = "es. Gabriele"; %>
-
+<h6><%  session.getId(); %></h6>
 <h1>LOGIN PAGE</h1>
 <h6>Cilacap</h6>
 

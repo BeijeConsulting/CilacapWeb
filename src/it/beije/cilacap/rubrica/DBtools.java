@@ -1,6 +1,7 @@
-package it.beije.cilacap.rubrica;
+package src.it.beije.cilacap.rubrica;
 
 import java.sql.Connection;
+
 
 
 
@@ -187,7 +188,7 @@ public class DBtools {
      	public static int esportadbsucsv(String path) throws ClassNotFoundException, SQLException, IOException {
      		List<ContattoWeb> c=DBtools.leggiContatti();
      		ContattoWeb con=new ContattoWeb();
-     		con.settoFile(c);
+//     		con.settoFile(c);
      		return c.size();
      	}
      	

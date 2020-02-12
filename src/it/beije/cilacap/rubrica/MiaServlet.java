@@ -1,7 +1,8 @@
-package it.beije.cilacap.rubrica;
+package src.it.beije.cilacap.rubrica;
 
 
 import java.awt.List;
+import java.io.File;
 import java.io.IOException;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -56,6 +57,23 @@ public class MiaServlet extends HttpServlet {
      	
     
      	html.append("</body></html>");
+     	
+     	ArrayList<ContattoWeb> lista1=new ArrayList<ContattoWeb>();
+     	MetodiCSV csv=new MetodiCSV();
+     	csv.scrivisuFile(lista1, ";");
+     	File file=new File("C:\\Users\\Padawan05\\Desktop\\Esercizio\\rubrica.xml");
+     	ArrayList<ContattoWeb> lista2=new ArrayList<ContattoWeb>();
+     
+     	try {
+			lista2=(ArrayList<ContattoWeb>) ContattoWeb.dammiContattoDaFile(file);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+     	for(ContattoWeb cont:lista2) {
+     		response.setContentType("text/html");
+    		response.getWriter().append(cont.toString());
+     	}
      	
      	System.out.println("Il server funge");
      	

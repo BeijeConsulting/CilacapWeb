@@ -1,4 +1,4 @@
-package it.beije.cilacap.rubrica;
+package src.it.beije.cilacap.rubrica;
 import it.beije.cilacap.rubrica.ParserXML;
 
 

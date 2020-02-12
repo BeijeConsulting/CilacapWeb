@@ -1,4 +1,4 @@
-package it.beije.cilacap.rubrica;
+package src.it.beije.cilacap.rubrica;
 
 import java.io.File;
 import java.io.IOException;
@@ -67,7 +67,7 @@ public class MetodiCSV {
 		}
 		
 	    //scrivo i contatti sul file csv
-		public void scrivisuFile(List<ContattoWeb> contenuto,String separatore) throws IOException {
+		public void scrivisuFile(ArrayList<ContattoWeb> contenuto,String separatore) throws IOException {
 
 			TextFileManager tfm=new TextFileManager();
 

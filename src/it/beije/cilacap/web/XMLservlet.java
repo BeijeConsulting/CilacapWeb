@@ -1,4 +1,4 @@
-package it.beije.cilacap.web;
+package src.it.beije.cilacap.web;
 
 import java.io.FileReader;
 import java.io.IOException;

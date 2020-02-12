@@ -1,16 +1,19 @@
-package it.beije.cilacap.rubrica;
+package src.it.beije.cilacap.rubrica;
 
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.criterion.Restrictions;
-import org.hibernate.query.Query;
+import sun.rmi.runtime.Log;
+
+
+//import org.apache.commons.logging.Log;
+//import org.apache.commons.logging.LogFactory;
+//import org.hibernate.Criteria;
+//import org.hibernate.Session;
+//import org.hibernate.SessionFactory;
+//import org.hibernate.Transaction;
+//import org.hibernate.cfg.Configuration;
+//import org.hibernate.criterion.Restrictions;
+//import org.hibernate.query.Query;
 
 
 public class HDBtools {
