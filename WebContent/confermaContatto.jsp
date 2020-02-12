@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<jsp:useBean id="contatto" class="it.beije.cilacap.web.rubrica.Contatto" scope="session" />
+<jsp:useBean id="contatto" class="it.beije.cilacap.rubrica.Contatto" scope="session" />
 <jsp:setProperty name="contatto" property="nome"/>
 <jsp:setProperty name="contatto" property="cognome"/>
 <jsp:setProperty name="contatto" property="telefono"/>
@@ -26,7 +26,7 @@ COGNOME : <jsp:getProperty name="contatto" property="cognome"/><br>
 TELEFONO : <jsp:getProperty name="contatto" property="telefono"/><br>
 EMAIL : <jsp:getProperty name="contatto" property="email"/><br>
 <br>
-<a href="inserisciContatti.jsp">MODIFICA</a>&nbsp;<a href="">CONFERMA</a>
+<a href="inserisciContatti.jsp">MODIFICA</a>&nbsp;<a href="addContact">CONFERMA</a>
 		
 </header>
 </body>

@@ -17,17 +17,21 @@
 <header class="header clearfix">
 		<a href="" class="header__logo"></a> 
 </header>
-
+<jsp:useBean id="contatto" class="it.beije.cilacap.rubrica.Contatto" scope="session" />
+<jsp:getProperty name="contatto" property="nome"/>
+<jsp:getProperty name="contatto" property="cognome"/>
+<jsp:getProperty name="contatto" property="telefono"/>
+<jsp:getProperty name="contatto" property="email"/>
 
 <form action="confermaContatto.jsp" method="POST" class="form__insert">
 
   <h1>Inserisci Contatto</h1>
   <hr class ="hr__styled">
   <dev class="form__aligned">
-  nome: <input type="text" name="nome" placeholder="<%= nome %>"><br><br>
-  cognome: <input type="text" name="cognome" placeholder="<%= cognome%>"><br><br>
-  telefono: <input type="text" name="telefono" placeholder="<%=telefono%>"><br><br>
-  email: <input type="text" name="email" placeholder="<%=email%>"><br><br>
+  nome: <input type="text" name="nome" placeholder="<%= contatto.getNome()!=null ? contatto.getNome() : nome %>"><br><br>
+  cognome: <input type="text" name="cognome" placeholder="<%= contatto.getCognome()!=null ? contatto.getCognome() : cognome%>"><br><br>
+  telefono: <input type="text" name="telefono" placeholder="<%=contatto.getTelefono()!=null ? contatto.getTelefono() : telefono%>"><br><br>
+  email: <input type="text" name="email" placeholder="<%=contatto.getEmail()!=null ? contatto.getEmail() : email%>"><br><br>
   <input type="submit" value="Inserisci">
   </dev>
 </form>
