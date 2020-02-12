@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import it.beije.cilacap.utils.*;
 
 
+
+
 /**
  * Servlet implementation class TestServlet
  */
@@ -25,6 +27,7 @@ public class TestServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+//
 		File f = new File("C:/work/prova.csv");
 		StringBuilder builderino = new StringBuilder();
 		Contatto contatto = new Contatto();
@@ -35,6 +38,10 @@ public class TestServlet extends HttpServlet {
 				i++;
 			}
 		while(i<generaLista(f).size());
+//
+		String username = (String) request.getSession().getAttribute("username");
+		String who = username != null ? username : "CILACAP";
+
 		
 		LocalTime now = LocalTime.now();
 		
@@ -42,7 +49,9 @@ public class TestServlet extends HttpServlet {
 		System.out.println("sono un output");
 		
 		StringBuilder builder = new StringBuilder("<!DOCTYPE html><html><head><title>CILACAP</title></head>");
-		builder.append("<body><b>").append(builderino).append("</b></body></html>");
+
+		builder.append("<body><b>").append(username).append(who).append("</b></body></html>");
+
 		
 		response.setContentType("text/html");
 		response.getWriter().append(builder.toString());
@@ -52,8 +61,16 @@ public class TestServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		
+		System.out.println("username : " + username);
+		System.out.println("password : " + password);
+		
+		response.setContentType("text/html");
+		response.getWriter().append("username : ").append(username).append("<br>")
+			.append("password : ").append(password);
 	}
 
 }
