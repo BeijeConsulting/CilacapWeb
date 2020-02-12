@@ -36,15 +36,14 @@ userBean.setLastName(request.getParameter("username"));
 <%--= mioUtente.getTelefono() --%> <br>
 <%--= mioUtente.getEmail() --%><br><br>
 
-Nome: <jsp:getProperty name="MioContatto" property="name"/><br>
-Cognome: <jsp:getProperty name="MioContatto" property="surnome"/><br>
-Telefono: <jsp:getProperty name="MioContatto" property="telephone"/><br>
-Email: <jsp:getProperty name="MioContatto" property="e-mail"/>
+Nome: <jsp:getProperty name="MioContatto" property="nome"><br>
+Cognome: <jsp:getProperty name="MioContatto" property="cognome"/><br>
+Telefono: <jsp:getProperty name="MioContatto" property="telefono"/><br>
+Email: <jsp:getProperty name="MioContatto" property="email"/>
 <br><br>
 
 <input type="submit" onclick="location.href='DatiRubricaJSP.jsp'" value="MODIFICA">
-
-
+&nbps;
 <input type="submit" onclick="location.href='SalvataggioConfermato.jsp'" value="CONFERMA">
 
 </body>
