@@ -8,20 +8,17 @@
 <h1>Rubrica </h1>
 <h5> Inserisci i tuoi dati personali:</h5>
 
-<%! String nome = "es. Riccardo"; %>
-<%! String cognome = "es. Baioni"; %>
-<%! String email = "es. riccardobaioni@hotmail.com"; %>
 
-<form action="test" method="POST">
+<form action="miaConferma.jsp" method="POST">
 
-<p> Nome: <input type="text" name="nome" placeholder="<%= nome %>"><br>
-<p> Cognome: <input type="text" name="cognome" placeholder="<%= cognome %>"><br>
+<p> Nome: <input type="text" name="nome"><br>
+<p> Cognome: <input type="text" name="cognome"><br>
 <p> Telefono: <input type="text" name="telefono"><br>
-<p> Email: <input type="text" name="email" placeholder="<%= email %>"><br><br><br>
+<p> Email: <input type="text" name="email"><br><br><br>
 
 
 
-<input type="submit" value="SALVA CONTATTO IN RUBRICA">
+<input type="submit" value="SALVA I DATI">
 
 </head>
 <body>

@@ -1,4 +1,4 @@
-<%@page import="src.it.beije.cilacap.web.User"%>
+<%@page import="it.beije.cilacap.web.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<jsp:useBean id="userBean" class="src.it.beije.cilacap.web.User" scope="session" />
+<jsp:useBean id="userBean" class="it.beije.cilacap.web.User" scope="session" />
 <jsp:setProperty name="userBean" property="firstName" param="param_nome"/>
 <jsp:setProperty name="userBean" property="lastName" param="param_cognome"/>
 <jsp:setProperty name="userBean" property="username"/>

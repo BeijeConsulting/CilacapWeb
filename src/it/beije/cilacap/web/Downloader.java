@@ -1,4 +1,4 @@
-package src.it.beije.cilacap.web;
+package it.beije.cilacap.web;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;

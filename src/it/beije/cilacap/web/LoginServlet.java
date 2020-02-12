@@ -1,4 +1,4 @@
-package src.it.beije.cilacap.web;
+package it.beije.cilacap.web;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -28,25 +28,29 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
+		String name = request.getParameter("nome");
+		String surname = request.getParameter("cognome");
+		String telefono = request.getParameter("telefono");
+		String email = request.getParameter("email");
 		
-		System.out.println("username : " + username);
-		System.out.println("password : " + password);
+		System.out.println("Nome : " + name);
+		System.out.println("Cognome : " + surname);
+		System.out.println("Telefono: " +telefono);
+		System.out.println("Email: " +email);
 		
-		if (username != null && username.equals("pippo")
-			&& password != null && password.equals("12345")) { //FAKE LOGIN
-			User user = new User();
-			user.setUsername(username);
-			user.setFirstName("Pippo");
-			user.setLastName("Fox");
-			user.setId(1);
-
-			HttpSession session = request.getSession();
-			session.setAttribute("user", user);
-		}
+//		if (name != null && name.equals(name)
+//			&& surname != null && surname.equals(surname)) { //FAKE LOGIN
+//			User user = new User();
+//			user.setUsername(name);
+//			user.setFirstName("Pippo");
+//			user.setLastName("Fox");
+//			user.setId(1);
+//
+//			HttpSession session = request.getSession();
+//			session.setAttribute("user", user);
+//		}
 		
-		response.sendRedirect("userdetails.jsp");
+		response.sendRedirect("miaConferma.jsp");
 	}
 
 }

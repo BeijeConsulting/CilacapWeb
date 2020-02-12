@@ -1,6 +1,7 @@
-package src.it.beije.cilacap.web;
+package it.beije.cilacap.web;
 
 import java.io.FileReader;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

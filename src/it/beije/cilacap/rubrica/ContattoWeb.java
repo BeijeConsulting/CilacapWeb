@@ -1,5 +1,5 @@
-package src.it.beije.cilacap.rubrica;
-import src.it.beije.cilacap.rubrica.ParserXML;
+package it.beije.cilacap.rubrica;
+import it.beije.cilacap.rubrica.ParserXML;
 
 
 

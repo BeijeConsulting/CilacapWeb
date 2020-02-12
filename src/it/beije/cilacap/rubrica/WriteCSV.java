@@ -1,5 +1,5 @@
-package src.it.beije.cilacap.rubrica;
-import src.it.beije.cilacap.rubrica.ContattoWeb;
+package it.beije.cilacap.rubrica;
+import it.beije.cilacap.rubrica.ContattoWeb;
 
 import java.util.ArrayList;
 import java.util.List;

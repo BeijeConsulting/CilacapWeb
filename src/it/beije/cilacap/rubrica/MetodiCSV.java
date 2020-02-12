@@ -1,4 +1,4 @@
-package src.it.beije.cilacap.rubrica;
+package it.beije.cilacap.rubrica;
 
 import java.io.File;
 import java.io.IOException;
