@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,34 +29,15 @@ public class TestServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		
 		StringBuilder s = new StringBuilder("<!DOCTYPE html><html><head><title>CILACAP</title></head>");
 		s.append("<body>");
-		
-		List<String> righe = new ArrayList<String>(); //struttura iniziale per lettura
-		File f = new File("C:\\Users\\Padawan12\\git\\CilacapWeb\\csv\\MyRubrica.csv"); //importazione file
-		
-		FileReader fileReader = new FileReader(f);
-		BufferedReader reader = new BufferedReader(fileReader);
-		
-		String row = reader.readLine();
-		while (row != null)
-		{
-			righe.add(row);
-			row = reader.readLine();
-		}
-		reader.close();
-		
-		for(int i=0; i<righe.size(); i++)
-		{
-			s.append(righe);
-			s.append("\n");
-		}
-		
-		
 
-		s.append("</body></html>");
-		response.getWriter().append(s.toString());
+		String username = (String) request.getSession().getAttribute("username");
+		String who = username != null ? username : "CILACAP";
+		
+		LocalTime now = LocalTime.now();
+		String message = now.isBefore(LocalTime.of(16, 00)) ? "BUONGIORNO" : "BUONASERA";
+		System.out.println("sono un output");
 	}
 
 	/**

@@ -12,7 +12,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+//Qui farò le elaborazione.
 @WebServlet("/MyRubrica")
 public class MyRubrica extends HttpServlet
 {
@@ -37,17 +39,17 @@ public class MyRubrica extends HttpServlet
 		String telefono = request.getParameter("telefono");
 		String email = request.getParameter("email");
 		
-		Contatto contatto = new Contatto();
-		contatto.setNome(nome);
-		contatto.setCognome(cognome);
-		contatto.setTelefono(telefono);
-		contatto.setEmail(email);
-		
-		request.getSession().setAttribute("contacts", contatto);
-		
-		RequestDispatcher rd = request.getRequestDispatcher("/beanData.jsp");
-        rd.forward(request, response);
-		
-		
+		if (nome != null && cognome != null && telefono != null) 
+		{
+			Contatto contatto = new Contatto();
+			contatto.setNome(nome);
+			contatto.setCognome(cognome);
+			contatto.setTelefono(telefono);
+			contatto.setEmail(email);
+
+			HttpSession session = request.getSession();
+			session.setAttribute("contatto", contatto);
+		}
+			response.sendRedirect("authMyRubrica.jsp");
 	}
 }

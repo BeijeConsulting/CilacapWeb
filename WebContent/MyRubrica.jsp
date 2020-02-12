@@ -1,3 +1,4 @@
+<%-- Questo è il mio form.jsp, di conseguenza, qui farò partire il server e metterò il form --%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -7,13 +8,13 @@
 		<title>MyRubrica</title>
 	</head>
 	<body>
-		<form action="MyRubrica" method="post">
+		<form action="authMyRubrica.jsp" method="POST">
 			<p>Form MyRubrica</p>
-			Nome:<input type="text" name="nome" placeholder="Inserisci nome"><br>
-			Cognome:<input type="text" name="cognome"><br>
-			Telefono:<input type="text" name="telefono"><br>
-			Email:<input type="text" name="email"><br><br>
-			<input type="submit" value="invia">
+			Nome:<input type="text" name="param_nome" placeholder="Inserisci nome"><br>
+			Cognome:<input type="text" name="param_cognome"><br>
+			Telefono:<input type="text" name="param_telefono"><br>
+			Email:<input type="text" name="param_email"><br><br>
+			<input type="submit" value="INVIA">
 		</form>
 
 	</body>
