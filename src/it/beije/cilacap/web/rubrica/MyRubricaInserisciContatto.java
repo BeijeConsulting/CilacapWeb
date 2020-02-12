@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import it.beije.cilacap.rubrica.Contatto;
-import it.beije.cilacap.rubrica.MyRubricaCSV_XML_DB_JPA;
+//import it.beije.cilacap.rubrica.MyRubricaCSV_XML_DB_JPA;
 
 
 @WebServlet("/addContact")
@@ -40,8 +40,8 @@ public class MyRubricaInserisciContatto extends HttpServlet {
 		contatto.setCognome(cognome);
 		contatto.setTelefono(telefono);
 		contatto.setEmail(email);
-		MyRubricaCSV_XML_DB_JPA.insertContact(contatto);
-		System.out.println("contatto inserito nel db con successo");
+//		MyRubricaCSV_XML_DB_JPA.insertContact(contatto);
+//		System.out.println("contatto inserito nel db con successo");
 		StringBuilder a = new StringBuilder();
 		a.append("<a href=\"index.html\">return</a>");
 		response.getWriter().append(contatto.toStringHTML()).append("<br>").append(a.toString());

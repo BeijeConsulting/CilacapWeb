@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import it.beije.cilacap.web.ivo.User;
+
 /**
  * Servlet implementation class LoginServlet
  */
