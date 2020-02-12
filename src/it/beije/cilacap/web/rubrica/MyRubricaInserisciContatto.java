@@ -11,31 +11,22 @@ import javax.servlet.http.HttpServletResponse;
 import it.beije.cilacap.rubrica.Contatto;
 import it.beije.cilacap.rubrica.MyRubricaCSV_XML_DB_JPA;
 
-/**
- * Servlet implementation class MyRubricaInserisciContatto
- */
+
 @WebServlet("/addContact")
 public class MyRubricaInserisciContatto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+  
     public MyRubricaInserisciContatto() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String nome = request.getParameter("nome");
@@ -50,6 +41,7 @@ public class MyRubricaInserisciContatto extends HttpServlet {
 		contatto.setTelefono(telefono);
 		contatto.setEmail(email);
 		MyRubricaCSV_XML_DB_JPA.insertContact(contatto);
+		System.out.println("contatto inserito nel db con successo");
 		StringBuilder a = new StringBuilder();
 		a.append("<a href=\"index.html\">return</a>");
 		response.getWriter().append(contatto.toStringHTML()).append("<br>").append(a.toString());

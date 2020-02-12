@@ -3,7 +3,7 @@ html,body{height:100%;}
 body{background: #eee;}
 
 .header{background: #333}
-.header__logo{color: #fff; float:left; display:block; padding: 15px;}
+.header__logo{color: #fff; float:left; display:block; padding: 15px; background-image: url("logo.jpg"); background-position: center;}
 .header__menu{float:right; margin:0; padding:0;}
 .header__menu__item{display: inline-block;} /*spiaggio i <li> in orizzontale*/
 .header__menu__item a{color: #fff; display:block; padding: 15px;}
@@ -20,6 +20,16 @@ body{background: #eee;}
 	-o-background-size: cover;
 	-moz-background-size: cover;
 	background-position: center;
+}
+
+.cover__caption{
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+.cover__caption__copy{
+	
 }
 
 
