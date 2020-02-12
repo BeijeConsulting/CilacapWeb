@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class TestServlet
  */
-@WebServlet("/test")
-public class TestServlet extends HttpServlet {
+@WebServlet("/prova")
+public class TestServlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -51,17 +51,17 @@ public class TestServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-		
-		System.out.println("username : " + username);
-		System.out.println("password : " + password);
-		
-		response.setContentType("text/html");
-		response.getWriter().append("username : ").append(username).append("<br>")
-			.append("password : ").append(password);
-	}
+//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		
+//		String username = request.getParameter("username");
+//		String password = request.getParameter("password");
+//		
+//		System.out.println("username : " + username);
+//		System.out.println("password : " + password);
+//		
+//		response.setContentType("text/html");
+//		response.getWriter().append("username : ").append(username).append("<br>")
+//			.append("password : ").append(password);
+//	}
 
 }
