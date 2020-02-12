@@ -8,17 +8,24 @@
 </head>
 <body>
 
-<%! String username = "es. Gabriele"; %>
+<%! String nome = "es. Gabriele";%>
+<%! String cognome = "es. Capobianco"; %>
+<%! String telefono = "es. 327 5833 761"; %>
+<%! String email = "es. gabriele@mail.it"; %>
 
 <h1>LOGIN PAGE</h1>
 <h6>Cilacap</h6>
 
 <p>inserisci di seguito i tuoi dati</p>
 
-<form action="test" method="POST">
-  Username: <input type="text" name="username" placeholder="<%= username %>"><br><br>
-  Password: <input type="password" name="password"><br><br>
-  <input type="submit" value="INVIA">
+<form action="addContatto" method="POST">
+
+  Nome: <input type="text" name="nome" placeholder="<%= nome %>"><br><br>
+  Cognome: <input type="text" name="cognome" placeholder="<%= cognome %>"><br><br>
+  Telefono: <input type="text" name="telefono"placeholder="<%= telefono %>"><br><br>
+  Email: <input type="text" name="email" placeholder="<%= email %>"><br><br>
+  <input type="submit" value="CONFERMA">
+  
 </form>
 
 </body>

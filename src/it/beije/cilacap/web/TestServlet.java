@@ -28,10 +28,8 @@ public class TestServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-<<<<<<< HEAD
 		Contatto contatto = new Contatto();
-=======
->>>>>>> refs/remotes/origin/master
+
 		LocalTime now = LocalTime.now();
 		String message = now.isBefore(LocalTime.of(16, 00)) ? "BUONGIORNO" : "BUONASERA";
 		System.out.println("sono un output");
