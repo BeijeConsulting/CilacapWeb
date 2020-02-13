@@ -25,7 +25,7 @@
 		Telefono: <jsp:getProperty name="contattoBean" property="telefono"/><br>
 		Email: <jsp:getProperty name="contattoBean" property="email"/><br>
 		
-		<a href="MyRubrica.jsp">Inserisci nuovo contatto</a>
+		<a href="MyRubrica.jsp">Modifica</a>
 		<form action="MyRubrica" method="POST">
 		<input type="submit" value="conferma">
 		</form>

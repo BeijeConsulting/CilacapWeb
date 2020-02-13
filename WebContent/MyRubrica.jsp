@@ -8,12 +8,15 @@
 		<title>MyRubrica</title>
 	</head>
 	<body>
+	
+		<jsp:useBean id="contattoBean" class="it.beije.cilacap.util.Contatto" scope="session" />
+		
 		<form action="authMyRubrica.jsp" method="POST">
 			<p>Form MyRubrica</p>
-			Nome:<input type="text" name="param_nome" placeholder="Inserisci nome"><br>
-			Cognome:<input type="text" name="param_cognome"><br>
-			Telefono:<input type="text" name="param_telefono"><br>
-			Email:<input type="text" name="param_email"><br><br>
+			Nome:<input type="text" name="param_nome" value="<%= contattoBean.getNome()!=null ? contattoBean.getNome() : "" %>"><br>
+			Cognome:<input type="text" name="param_cognome" value="<%= contattoBean.getCognome()!=null ? contattoBean.getCognome() : "" %>"><br>
+			Telefono:<input type="text" name="param_telefono" value="<%= contattoBean.getTelefono()!=null ? contattoBean.getTelefono() : "" %>"><br>
+			Email:<input type="text" name="param_email" value="<%= contattoBean.getEmail()!=null ? contattoBean.getEmail() : "" %>"><br><br>
 			<input type="submit" value="INVIA">
 		</form>
 
