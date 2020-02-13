@@ -9,18 +9,14 @@
 <link rel="stylesheet" href="styleIndex.css">
 <link rel="shortcut icon" href="favicon.ico" />
 <title>Gabriele's Rubrica insertContact</title>
-
 </head>
 <body>
-
-
 	<header class="header clearfix">
 		<a href="index.html" class="header__logo"></a> <a href=""
 			class="header__icon-bar"> <span></span> <span></span> <span></span>
 		</a>
 		<ul class="header__menu">
 			<li class="header__menu__item"><a href="index.html">Home</a></li>
-
 		</ul>
 	</header>
 	<jsp:useBean id="contatto" class="it.beije.cilacap.rubrica.Contatto"
@@ -30,7 +26,7 @@
 	<jsp:getProperty name="contatto" property="telefono" />
 	<jsp:getProperty name="contatto" property="email" />
 
-	<form action="confermaContatto.jsp" method="POST" class="form__insert">
+	<form action="confermaContatto.jsp" method="POST" class="form__aligned">
 
 		<h1>Inserisci Contatto</h1>
 		<hr class="hr__styled">
@@ -47,9 +43,10 @@
 		</div>
 	</form>
 
-
-	<footer class="footer">
+	<div class="footer__bottom">
+		<footer class="footer">		
 		<p>Copyright - 2020 GabrieleDesign</p>
+		</div>
 	</footer>
 </body>
 </html>
