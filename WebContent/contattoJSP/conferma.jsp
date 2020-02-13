@@ -31,7 +31,10 @@
 	c.setTelefono(contattoBean.getTelefono());
 	c.setEmail(contattoBean.getEmail());
 	
+	// Hibernate
 	//HibernateRubricaUtil.writeSingleContactOnDB(c);
+	
+	// JPA
 	List<Contatto2> lista = new ArrayList<Contatto2>();
 	lista.add(c);
 	
