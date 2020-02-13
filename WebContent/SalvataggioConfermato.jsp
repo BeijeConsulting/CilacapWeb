@@ -8,13 +8,13 @@
 </head>
 <body>
 
-<jsp:useBean id="MioContatto" class="it.beije.cilacap.web.rubrica.Contatto" scope="session" />
+<jsp:useBean id="MioContatto" class="it.beije.cilacap.rubrica.Contatto" scope="session" />
 
 <h1>HO SALVATO I SEGUENTI DATI:</h1>
-NOME : <jsp:getProperty name="MioContatto" property="nome"/><br>
-COGNOME : <jsp:getProperty name="MioContatto" property="cognome"/><br>
-TELEFONO : <jsp:getProperty name="MioContatto" property="telefono"/><br>
-EMAIL : <jsp:getProperty name="MioContatto" property="email"/><br>
+NOME : <jsp:getProperty name="Contatto" property="nome"/><br>
+COGNOME : <jsp:getProperty name="Contatto" property="cognome"/><br>
+TELEFONO : <jsp:getProperty name="Contatto" property="telefono"/><br>
+EMAIL : <jsp:getProperty name="Contatto" property="email"/><br>
 <br>
 <input type="submit" onclick="location.href='DatiRubricaJSP.jsp'" value="INSERISCI NUOVI DATI"></a>
 

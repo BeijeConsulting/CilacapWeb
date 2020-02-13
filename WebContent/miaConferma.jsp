@@ -1,4 +1,4 @@
-<%@page import="it.beije.cilacap.web.rubrica.Contatto"%>
+<%@page import="it.beije.cilacap.rubrica.Contatto"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
@@ -11,7 +11,7 @@
 <body>
 <h1> Conferma O MODIFICA I DATI CHE HAI INSERITO</h1>
 
-<jsp:useBean id="MioContatto" class="it.beije.cilacap.web.rubrica.Contatto" scope="session" />
+<jsp:useBean id="MioContatto" class="it.beije.cilacap.rubrica.Contatto" scope="session" />
 <jsp:setProperty name="Contatto" property="nome"  />
 <jsp:setProperty name="Contatto" property="cognome" />
 <jsp:setProperty name="Contatto" property="telefono" />
