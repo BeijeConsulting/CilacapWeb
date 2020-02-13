@@ -7,12 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import it.beije.cilacap.web.rubrica.Contatto;
+import it.beije.cilacap.rubrica.Contatto;
 
 /**
  * Servlet implementation class Salva
  */
-@WebServlet("/salva")
+@WebServlet("/save")
 public class Save extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -23,9 +23,9 @@ public class Save extends HttpServlet {
 		if (contatto != null) {
 			System.out.println("procedo con salvataggio...");
 			
-			response.sendRedirect("./rubrica/SalvataggioConfermato.jsp");
+			response.sendRedirect("./WEB-INF/SalvataggioConfermato.jsp");
 		} else {
-			response.sendRedirect("./rubrica/DatiRubrica.jsp");
+			response.sendRedirect("./WEB-INF/DatiRubrica.jsp");
 		}
 	}
 
