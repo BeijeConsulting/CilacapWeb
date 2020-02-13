@@ -12,8 +12,10 @@ public class DBtools {
 		EntityManager entityManager = factory.createEntityManager();
 		
 		entityManager.getTransaction().begin();
+		System.out.println("Is open ?" + entityManager.isOpen());
 		System.out.println("contatto id : " + contatto.getId());
 		entityManager.persist(contatto);
+		System.out.println("Is open ?" + entityManager.isOpen());
 		System.out.println("contatto id : " + contatto.getId());
 		entityManager.getTransaction().commit();
 		

@@ -56,19 +56,12 @@ public class RubricaServlet extends HttpServlet{
 				e1.printStackTrace();
 			}
 			
-//			response.setContentType("text/html");
-//			response.getWriter().append("Contatto").append("<br><br>")
-//				.append("Nome : ").append(contatto.getNome()).append("<br>")
-//				.append("Cognome : ").append(contatto.getCognome()).append("<br>")
-//				.append("Telefono : ").append(contatto.getTelefono()).append("<br>")
-//				.append("Email : ").append(contatto.getEmail());
-			
-			userBean = new User();
+			userBean = null;
 			request.getSession().setAttribute("userBean", userBean);
+			System.out.println(userBean);
 			
-			response.sendRedirect("CilacapWeb/WebContent/SchermataInserimentoCredenziali.jsp");
 			
-			//vedi qua
+			response.sendRedirect("SchermataInserimentoCredenziali.jsp");
 			
 		}
 }
