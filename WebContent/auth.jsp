@@ -29,12 +29,13 @@ userBean.setLastName(request.getParameter("param_cognome"));
 userBean.setLastName(request.getParameter("username"));
 */
 %>
-
-<%= userBean.getNome() %> <%= userBean.getCognome() %><br><br>
-<jsp:getProperty name="userBean" property="nome"/><br>
+<h1>
+<%= userBean.getNome() %> <%= userBean.getCognome() %><br><br></h1>
+<h2><jsp:getProperty name="userBean" property="nome"/><br>
 <jsp:getProperty name="userBean" property="cognome"/><br>
 <jsp:getProperty name="userBean" property="email"/><br>
-<jsp:getProperty name="userBean" property="telefono"/><br>
+<jsp:getProperty name="userBean" property="telefono"/>
+</h2><br>
 <br><br>
 
  <a href="form.jsp">MODIFICA </a><br>
