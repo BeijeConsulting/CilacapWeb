@@ -7,16 +7,25 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
 <link rel="stylesheet" href="styleIndex.css">
+ <link rel="shortcut icon" href="favicon.ico" /> 
 <title>Gabriele's Rubrica insertContact</title>
+
 </head>
 <body>
 <%! String nome = "es. pippo"; %>
 <%! String cognome = "es. rossi"; %>
 <%! String telefono = "es. 3456833596"; %>
 <%! String email = "es pippo.rossi@gmail.com"; %>
+
 <header class="header clearfix">
-		<a href="" class="header__logo"></a> 
-</header>
+		<a href="index.html" class="header__logo"></a> <a href=""
+			class="header__icon-bar"> <span></span> <span></span> <span></span>
+		</a>
+		<ul class="header__menu">
+			<li class="header__menu__item"><a href="index.html">Home</a></li>
+			
+		</ul>
+	</header>
 <jsp:useBean id="contatto" class="it.beije.cilacap.rubrica.Contatto" scope="session" />
 <jsp:getProperty name="contatto" property="nome"/>
 <jsp:getProperty name="contatto" property="cognome"/>
@@ -35,5 +44,10 @@
   <input type="submit" value="Inserisci">
   </dev>
 </form>
+
+
+<footer class="footer">
+		<p>Copyright - 2020 GabrieleDesign</p>
+	</footer>
 </body>
 </html>
