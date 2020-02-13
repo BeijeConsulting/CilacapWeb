@@ -56,12 +56,12 @@ public class RubricaServlet extends HttpServlet{
 				e1.printStackTrace();
 			}
 			
-			userBean = null;
-			request.getSession().setAttribute("userBean", userBean);
-			System.out.println(userBean);
+//			userBean = null;
+//			request.getSession().setAttribute("userBean", userBean);
+//			System.out.println(userBean);
 			
 			
-			response.sendRedirect("SchermataInserimentoCredenziali.jsp");
+			response.sendRedirect("SchermataConfermaInserimento.jsp");
 			
 		}
 }

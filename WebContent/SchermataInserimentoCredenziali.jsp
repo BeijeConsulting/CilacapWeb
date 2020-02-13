@@ -43,6 +43,7 @@
   Telefono: &emsp; <input type="text" name="telefono"  value="<%= telefono %>" placeholder="<%= holderTelefono %>"><br>
   Email: 	&emsp; <input type="text" name="email" value="<%= email %>" placeholder="<%= holderEmail %>"><br><br>
   <input type="submit" value="Salva">
+  
 </form>
 </body>
 </html>
