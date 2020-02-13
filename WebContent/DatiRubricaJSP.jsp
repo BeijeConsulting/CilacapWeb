@@ -9,16 +9,38 @@
 <h1>Rubrica </h1>
 
 <h5> Inserisci i tuoi dati personali:</h5>
-
-
-
-
-
 <jsp:useBean id="MioContatto" class="it.beije.cilacap.rubrica.MioContatto" scope="session" />
- <jsp:setProperty name="MioContatto" property="nome"/> <br>
+<%
+     String nome="",cognome="",telefono="", email="";
+    
+     if(MioContatto.getNome()!=null){
+    	nome=MioContatto.getNome();
+     }
+    
+     if(MioContatto.getCognome()!=null){
+    	nome=MioContatto.getCognome();
+     }
+     
+     if(MioContatto.getTelefono()!=null){
+     	nome=MioContatto.getTelefono();
+     }
+     
+     if(MioContatto.getEmail()!=null){
+     	nome=MioContatto.getEmail();
+     }
+
+
+%>
+
+
+
+
+
+
+ <!--  jsp:setProperty name="MioContatto" property="nome"/> <br>
  <jsp:setProperty name="MioContatto" property="cognome"/> <br>
  <jsp:setProperty name="MioContatto" property="telefono"/> <br>
- <jsp:setProperty name="MioContatto" property="email"/>
+ <jsp:setProperty name="MioContatto" property="email"/>-->
  
  <form action="miaConferma.jsp" method="POST">
 <p> Nome: <input type="text" name="nome"value='<jsp:getProperty property="nome" name="MioContatto" />'><br>
