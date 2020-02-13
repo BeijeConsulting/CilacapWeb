@@ -1,4 +1,4 @@
-<%@page import="it.beije.cilacap.rubrica.MioContatto"%>
+<%@page import="it.beije.cilacap.web.rubrica.Contatto"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -9,24 +9,24 @@
 <h1>Rubrica </h1>
 
 <h5> Inserisci i tuoi dati personali:</h5>
-<jsp:useBean id="MioContatto" class="it.beije.cilacap.rubrica.MioContatto" scope="session" />
+<jsp:useBean id="Contatto" class="it.beije.cilacap.web.rubrica.Contatto" scope="session" />
 <%
      String nome="",cognome="",telefono="", email="";
     
-     if(MioContatto.getNome()!=null){
-    	nome=MioContatto.getNome();
+     if(Contatto.getNome()!=null){
+    	nome=Contatto.getNome();
      }
     
-     if(MioContatto.getCognome()!=null){
-    	nome=MioContatto.getCognome();
+     if(Contatto.getCognome()!=null){
+    	nome=Contatto.getCognome();
      }
      
-     if(MioContatto.getTelefono()!=null){
-     	nome=MioContatto.getTelefono();
+     if(Contatto.getTelefono()!=null){
+     	nome=Contatto.getTelefono();
      }
      
-     if(MioContatto.getEmail()!=null){
-     	nome=MioContatto.getEmail();
+     if(Contatto.getEmail()!=null){
+     	nome=Contatto.getEmail();
      }
 
 

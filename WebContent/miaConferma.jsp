@@ -1,4 +1,4 @@
-<%@page import="it.beije.cilacap.rubrica.MioContatto"%>
+<%@page import="it.beije.cilacap.web.rubrica.Contatto"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
@@ -11,11 +11,11 @@
 <body>
 <h1> Conferma O MODIFICA I DATI CHE HAI INSERITO</h1>
 
-<jsp:useBean id="MioContatto" class="it.beije.cilacap.rubrica.MioContatto" scope="session" />
-<jsp:setProperty name="MioContatto" property="nome"  />
-<jsp:setProperty name="MioContatto" property="cognome" />
-<jsp:setProperty name="MioContatto" property="telefono" />
-<jsp:setProperty name="MioContatto" property="email"/>
+<jsp:useBean id="MioContatto" class="it.beije.cilacap.web.rubrica.Contatto" scope="session" />
+<jsp:setProperty name="Contatto" property="nome"  />
+<jsp:setProperty name="Contatto" property="cognome" />
+<jsp:setProperty name="Contatto" property="telefono" />
+<jsp:setProperty name="Contatto" property="email"/>
 
 <% System.out.println(MioContatto);
 /*TRADUZIONE IN JAVA :
@@ -36,10 +36,10 @@ userBean.setLastName(request.getParameter("username"));
 <%--= mioUtente.getTelefono() --%> <br>
 <%--= mioUtente.getEmail() --%><br><br>
 
-Nome: <jsp:getProperty name="MioContatto" property="nome"><br>
-Cognome: <jsp:getProperty name="MioContatto" property="cognome"/><br>
-Telefono: <jsp:getProperty name="MioContatto" property="telefono"/><br>
-Email: <jsp:getProperty name="MioContatto" property="email"/>
+Nome: <jsp:getProperty name="Contatto" property="nome"><br>
+Cognome: <jsp:getProperty name="Contatto" property="cognome"/><br>
+Telefono: <jsp:getProperty name="Contatto" property="telefono"/><br>
+Email: <jsp:getProperty name="Contatto" property="email"/>
 <br><br>
 
 <input type="submit" onclick="location.href='DatiRubricaJSP.jsp'" value="MODIFICA">

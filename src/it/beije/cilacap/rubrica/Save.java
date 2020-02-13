@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import it.beije.cilacap.web.rubrica.Contatto;
+
 /**
  * Servlet implementation class Salva
  */
@@ -17,7 +19,7 @@ public class Save extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("SALVO CONTATTO?");
 		
-		MioContatto contatto = (MioContatto)request.getSession().getAttribute("MioContatto");
+		Contatto contatto = (Contatto)request.getSession().getAttribute("Contatto");
 		if (contatto != null) {
 			System.out.println("procedo con salvataggio...");
 			

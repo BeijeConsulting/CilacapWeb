@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<jsp:useBean id="MioContatto" class="it.beije.cilacap.rubrica.MioContatto" scope="session" />
+<jsp:useBean id="MioContatto" class="it.beije.cilacap.web.rubrica.Contatto" scope="session" />
 
 <h1>HO SALVATO I SEGUENTI DATI:</h1>
 NOME : <jsp:getProperty name="MioContatto" property="nome"/><br>
