@@ -23,7 +23,8 @@ Telefono: <jsp:getProperty name="userBean" property="telefono"/><br>
 Email: <jsp:getProperty name="userBean" property="email"/><br>
 <br>
 
-<form action="SchermataInserimentoCredenziali.jsp" method="POST">
+<form action="SchermataInserimentoCredenziali.jsp
+" method="POST">
 <input type="submit" value="Modifica">
 </form>
 <br>

@@ -28,9 +28,9 @@
 	   if(userBean.getTelefono() != null)
 		telefono = userBean.getTelefono();
 	   if(userBean.getEmail() != null)
-		email = userBean.getEmail();
-	   
+		email = userBean.getEmail();	   
 %>
+
 <h1>Registrazione Contatto</h1>
 
 <p>Inserisci le credenziali del contatto: </p>
