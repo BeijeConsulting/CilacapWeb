@@ -22,10 +22,10 @@ public class Save extends HttpServlet {
 		Contatto contatto = (Contatto)request.getSession().getAttribute("Contatto");
 		if (contatto != null) {
 			System.out.println("procedo con salvataggio...");
-			
+
 			response.sendRedirect("./WEB-INF/SalvataggioConfermato.jsp");
 		} else {
-			response.sendRedirect("./WEB-INF/DatiRubrica.jsp");
+			response.sendRedirect("./WEB-INF/DatiRubricaJSP.jsp");
 		}
 	}
 
