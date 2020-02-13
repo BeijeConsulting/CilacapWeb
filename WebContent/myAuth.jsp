@@ -15,6 +15,7 @@
 <jsp:setProperty name="userBean" property="lastName" param="param_cognome"/>
 <jsp:setProperty name="userBean" property="username"/>
 
+
 <%
 /*TRADUZIONE IN JAVA :
 User userBean = (User) request.getSession().getAttribute("userBean");
@@ -29,12 +30,18 @@ userBean.setLastName(request.getParameter("username"));
 */
 %>
 
-<%= userBean.getFirstName() %> <%= userBean.getLastName() %><br><br>
-<jsp:getProperty name="userBean" property="firstName"/><br>
-<jsp:getProperty name="userBean" property="lastName"/><br>
-<jsp:getProperty name="userBean" property="username"/>
+<p>Conferma i dati che hai inserito:</p><br>
+Nome: <jsp:getProperty name="userBean" property="firstName"/><br>
+Cognome: <jsp:getProperty name="userBean" property="lastName"/><br>
+Username: <jsp:getProperty name="userBean" property="username"/>
 <br><br>
-<a href="myLogin.jsp">MODIFICA</a>
+<a href="myLogin.jsp">MODIFICA</a> <a href="conferma.jsp">CONFERMA</a>
+
+<%
+	session.setAttribute("nome", userBean.getFirstName());
+	session.setAttribute("cognome", userBean.getLastName());
+	session.setAttribute("username", userBean.getUsername());
+%>
 
 </body>
 </html>
