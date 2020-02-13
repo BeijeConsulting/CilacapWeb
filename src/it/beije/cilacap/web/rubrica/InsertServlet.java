@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import it.beije.cilacap.web.rubrica.Contatto;
+import it.beije.cilacap.web.Contatto;
 
 /**
  * Servlet implementation class RubricaServlet
