@@ -35,12 +35,15 @@ public class MyServletRubrica extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
+		//Creation of a new contatto that gets the attributes previously set
 		Contatto contatto = (Contatto) request.getSession().getAttribute("contatto");
 		if (contatto == null) {
 			contatto = new Contatto();
 			request.getSession().setAttribute("contatto", contatto);
 		}
 		
+		//Creation of strings with the properties from contatto
 		String nome = contatto.getNome();
 		String cognome = contatto.getCognome();
 		String telefono = contatto.getTelefono();
@@ -71,6 +74,7 @@ public class MyServletRubrica extends HttpServlet {
 				//Entity manager close
 				em.close();
 				
+		//Redirect information to confirmation page		
 		response.sendRedirect("Confirmation_Page.jsp");
 			
 		}

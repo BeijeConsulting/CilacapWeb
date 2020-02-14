@@ -8,7 +8,10 @@
 	</head>
 	<body>
 
+		<%//Next line defines the use of the Bean contatto for the entire session %>
 		<jsp:useBean id="contatto" class="it.beije.cilacap.web.rubrica.Contatto" scope="session" />
+		
+		<%//Next line sets the different properties obtained before to contatto %>
 		<jsp:setProperty name="contatto" property="nome"/>
 		<jsp:setProperty name="contatto" property="cognome"/>
 		<jsp:setProperty name="contatto" property="telefono"/>
@@ -23,10 +26,13 @@
 		EMAIL : <jsp:getProperty name="contatto" property="email"/><br>
 		<br>
 		
+		<%// Form that will redirect this information to the initial page %>
 		<form action="Initial_Login.jsp" method="POST">
 			<input type="submit" value="MODIFICA">
 		</form>
 		<br>
+		
+		<%// Form that will redirect this information to the servlet %>
 		<form action="servlet_rubrica" method="POST">
 			<input type="submit" value="CONFERMA">
 		</form>

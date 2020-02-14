@@ -8,6 +8,7 @@
 	</head>
 	<body>
 	
+		<%//Next line defines the use of the Bean contatto for the entire session %>
 		<jsp:useBean id="contatto" class="it.beije.cilacap.web.rubrica.Contatto" scope="session" />
 		
 		<h1>HO SALVATO I SEGUENTI DATI:</h1>
@@ -19,10 +20,12 @@
 		
 		<br>
 		
-		<%contatto = null;
+		<%//Setting contatto to null so a new value can be obtained
+		contatto = null;
 		request.getSession().setAttribute("contatto", contatto);
-		System.out.println(contatto); %>		
-			
+		System.out.println(contatto); %>
+				
+		<%// Form that will redirect this information back to  to the initial page %>	
 		<form action="Initial_Login.jsp" method="POST">
 			<input type="submit" value="INSERISCI NUOVI DATI">
 		</form>
