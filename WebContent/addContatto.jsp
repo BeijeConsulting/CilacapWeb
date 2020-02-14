@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login page</title>
+<title>Aggiungi contatto</title>
 </head>
 <body>
 
-<h1>LOGIN PAGE</h1>
+<h1>Aggiungi un nuovo contatto</h1>
 <h6>Cilacap</h6>
 
 <p>inserisci di seguito i tuoi dati</p>

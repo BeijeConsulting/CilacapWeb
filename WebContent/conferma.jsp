@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>User Details</title>
+<title>Dettagli</title>
 </head>
 <body>
 
@@ -17,10 +17,10 @@
 	String email = con.getEmail();
 %>
 
-  Nome: <%= nome %>
-  Cognome: <%= cognome %>
-  Telefono: <%= telefono %>
-  Email: <%= email %>
+  Nome: <%= nome %><br><br>
+  Cognome: <%= cognome %><br><br>
+  Telefono: <%= telefono %><br><br>
+  Email: <%= email %><br><br>
 
 <form action="addContatto.jsp" method="POST">
   <input type="submit" value="MODIFICA">

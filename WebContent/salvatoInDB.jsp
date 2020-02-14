@@ -17,11 +17,12 @@
 	String email = con.getEmail();
 	request.getSession().setAttribute("contatto", null);
 %>
-
-  Nome: <%= nome %>
-  Cognome: <%= cognome %>
-  Telefono: <%= telefono %>
-  Email: <%= email %>
+	
+  Il seguente contatto è stato salvato con successo<br><br>
+  Nome: <%= nome %><br>
+  Cognome: <%= cognome %><br>
+  Telefono: <%= telefono %><br>
+  Email: <%= email %><br>
 
 <form action="addContatto.jsp" method="POST">
   	<input type="submit" value="AGGIUNGI NUOVO CONTATTO">
