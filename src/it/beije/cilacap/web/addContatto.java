@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.hibernate.Session;
+
 import it.beije.cilacap.rubrica.Contatto;
 import it.beije.cilacap.rubrica.DBtools;
 
@@ -30,29 +32,23 @@ public class addContatto extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		Contatto contatto = new Contatto();
+		Contatto contatto =(Contatto) request.getSession().getAttribute("contatto");
 		
-		contatto.setNome(request.getParameter("nome"));
-		contatto.setCognome(request.getParameter("cognome"));
-		contatto.setTelefono(request.getParameter("telefono"));
-		contatto.setEmail(request.getParameter("email"));
 		
-		System.out.println(contatto.getNome());
+//		String nome = (String) request.getSession().getAttribute("nome");
+//		String cognome = (String) request.getSession().getAttribute("cognome");
+//		String telefono = (String) request.getSession().getAttribute("telefono");
+//		String email = (String) request.getSession().getAttribute("email");
 		
-		try {
-			DBtools.insertContattoJPA(contatto);
-		}catch(Exception e) {}
+//		contatto.setNome(nome);
+//		contatto.setCognome(cognome);
+//		contatto.setTelefono(telefono);
+//		contatto.setEmail(email);
 		
 		StringBuilder sb = new StringBuilder();
-		sb.append("<a href= login.jsp target= _blank>Torna alla HomePage</a><br>");
+		sb.append("<a href= newContatto.jsp>Torna alla HomePage</a><br>");
+		
+		request.getSession().setAttribute("contatto", new Contatto());
 		
 		response.getWriter().append("<!DOCTYPE html><html><head><title>CILACAP</title></head>")
 			.append("<p>Contatto salvato con successo</p><br>")
@@ -60,6 +56,30 @@ public class addContatto extends HttpServlet {
 			.append(DBtools.printRubricaHTML(contatto))
 			.append("<body><b><br>")
 			.append(sb.toString());
+		
+		if (contatto.getNome()!=null) {
+			try {
+				DBtools.insertContattoJPA(contatto);
+			}catch(Exception e) {}
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+//		
+//		contatto.setNome(request.getParameter("nome"));
+//		contatto.setCognome(request.getParameter("cognome"));
+//		contatto.setTelefono(request.getParameter("telefono"));
+//		contatto.setEmail(request.getParameter("email"));
+//		
+//		System.out.println(contatto.getNome());
+//		
+		
+		
 	}
 
 }

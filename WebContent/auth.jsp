@@ -10,10 +10,11 @@
 </head>
 <body>
 
-<jsp:useBean id="userBean" class="it.beije.cilacap.web.User" scope="session" />
-<jsp:setProperty name="userBean" property="firstName" param="param_nome"/>
-<jsp:setProperty name="userBean" property="lastName" param="param_cognome"/>
-<jsp:setProperty name="userBean" property="username"/>
+<jsp:useBean id="contatto" class="it.beije.cilacap.rubrica.Contatto" scope="session" />
+<jsp:setProperty name="contatto" property="nome" param="nome"/>
+<jsp:setProperty name="contatto" property="cognome" param="cognome"/>
+<jsp:setProperty name="contatto" property="telefono" param="telefono"/>
+<jsp:setProperty name="contatto" property="email" param="email"/>
 
 <%
 /*TRADUZIONE IN JAVA :
@@ -28,13 +29,14 @@ userBean.setLastName(request.getParameter("param_cognome"));
 userBean.setLastName(request.getParameter("username"));
 */
 %>
+<h1>VERIFICA DEI DATI</h1><br>
+NOME: &nbsp;&nbsp;<jsp:getProperty name="contatto" property="nome"/><br>
+COGNOME: &nbsp;&nbsp;<jsp:getProperty name="contatto" property="cognome"/><br>
+TELEFONO: &nbsp;&nbsp; <jsp:getProperty name="contatto" property="telefono"/><br>
+EMAIL: &nbsp;&nbsp;<jsp:getProperty name="contatto" property="email"/><br>
 
-<%= userBean.getFirstName() %> <%= userBean.getLastName() %><br><br>
-<jsp:getProperty name="userBean" property="firstName"/><br>
-<jsp:getProperty name="userBean" property="lastName"/><br>
-<jsp:getProperty name="userBean" property="username"/>
-<br><br>
-<a href="form.jsp">MODIFICA</a>
+<a href="newContatto.jsp">MODIFICA</a>&nbsp;<a href="addContatto">CONFERMA</a>
+
 
 </body>
 </html>
