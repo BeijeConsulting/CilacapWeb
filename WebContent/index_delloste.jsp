@@ -19,8 +19,11 @@ Telefono: <input type= "text" name="telefono" value="<%= contatto.getTelefono()!
 Email: <input type= "text" name="email" value="<%= contatto.getEmail()!=null ? contatto.getEmail():""%>" placeholder="es. stebru@gmail.com"><br>
 <br>
 <input type="submit" value="CONTINUA">
-
 </form>
+<p>CANCELLA CONTATTO</p>
+<form action=""></form>
+ID:<input type="text" name="id" placeholder="es.4"><br>
+
 
 </body>
 </html>

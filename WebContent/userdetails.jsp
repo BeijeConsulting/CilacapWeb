@@ -16,9 +16,13 @@
 // 	String name = user != null ? user.getFirstName() : "SCONOSCIUTO";
 
 	String name = user.getFirstName() != null ? user.getFirstName() : "SCONOSCIUTO";
+	
 %>
 
-CIAO <%= name %>
+Ciao <%= name %>
+<form action="index_delloste.jsp" method="post">
+<input type="submit" value="CONTINUA">
+</form>
 
 </body>
 </html>

@@ -19,9 +19,9 @@ public class addContatto extends HttpServlet {
 		Contatto c =(Contatto)request.getSession().getAttribute("contatto");
 		
 		Utils.insertContattoJpa(c);
-		
-		request.getSession().setAttribute("contatto",null);
-		response.getWriter().append("<a href=\"index_delloste.jsp\">TORNA ALLA HOMEPAGE</a>");
+		String messaggio= "CONTATTO SALVATO CORRETTAMENTE <br>";
+		request.getSession().setAttribute("contatto",new Contatto());
+		response.getWriter().append(messaggio + "<a href=\"index_delloste.jsp\">TORNA ALLA HOMEPAGE</a>");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
