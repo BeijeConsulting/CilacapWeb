@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import it.beije.cilacap.web.rubrica.Contatto;
+
 public class CSVtools {
 	
 	public static List<Contatto> readCSVFile(String pathFile) throws Exception {

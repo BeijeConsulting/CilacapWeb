@@ -7,6 +7,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import it.beije.cilacap.web.rubrica.Contatto;
+
 public class JPDBtools {
 
 	
@@ -41,7 +43,6 @@ public class JPDBtools {
 	}
 	
 	public static void insertInJPAHDB(List<Contatto> contatti) {
-		System.out.println("insertInJPAHDB");
 		
 		//EntityManager creation
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("CilacapUnit");

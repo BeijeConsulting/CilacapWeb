@@ -12,6 +12,8 @@ import org.hibernate.cfg.Configuration;
 //import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 
+import it.beije.cilacap.web.rubrica.Contatto;
+
 
 public class HDBtools {
 	

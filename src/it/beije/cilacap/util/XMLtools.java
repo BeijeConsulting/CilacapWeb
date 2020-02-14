@@ -15,6 +15,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+import it.beije.cilacap.web.rubrica.Contatto;
+
 public class XMLtools {
 
 	public static List<Contatto> getContattiFromFile(File file) throws Exception {

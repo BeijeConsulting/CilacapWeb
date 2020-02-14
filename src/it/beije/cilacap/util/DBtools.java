@@ -8,6 +8,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import it.beije.cilacap.web.rubrica.Contatto;
+
 public class DBtools {
 	
 	public static List<Contatto> leggiContatti() throws ClassNotFoundException, SQLException {
