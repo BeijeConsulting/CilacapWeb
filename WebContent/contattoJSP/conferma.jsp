@@ -24,28 +24,23 @@
 	Cognome: <jsp:getProperty name="contattoBean" property="cognome"/><br>
 	Telefono: <jsp:getProperty name="contattoBean" property="telefono"/><br>
 	Email: <jsp:getProperty name="contattoBean" property="email"/>
-	<%
-	Contatto2 c = new Contatto2();
-	c.setNome(contattoBean.getNome());
-	c.setCognome(contattoBean.getCognome());
-	c.setTelefono(contattoBean.getTelefono());
-	c.setEmail(contattoBean.getEmail());
-	
+	<%--
 	// Hibernate
-	//HibernateRubricaUtil.writeSingleContactOnDB(c);
+	//HibernateRubricaUtil.writeSingleContactOnDB(contattoBean);
 	
 	// JPA
 	List<Contatto2> lista = new ArrayList<Contatto2>();
-	lista.add(c);
-	
+	lista.add(contattoBean);
 	JpaRubricaUtils.writeJPAListOfContactsIntoDB(lista);	
 	
 	if (contattoBean != null) {
 		request.getSession().removeAttribute("contattoBean");
 	}
 	
-	%>
+	
+	
+	--%>
 	<br><br>
-	<a href="formContatto.jsp">Inserisci un nuovo contatto!</a>
+	<a href="../PulisciContatto">Inserisci un nuovo contatto!</a>
 </body>
 </html>

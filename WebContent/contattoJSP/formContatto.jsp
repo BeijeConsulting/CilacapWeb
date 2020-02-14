@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Rubrica</title>
 </head>
 <body>
-
+<h1>Rubrica</h1>
 <form action="insertContatto.jsp" method="POST">
 <jsp:useBean id="contattoBean" class="it.beije.cilacap.esercizi.myRubrica.Contatto2" scope="session" />
   Nome: <input type="text" name="nome" value="<% if(contattoBean.getNome() != null) out.print(contattoBean.getNome());%>"><br><br>

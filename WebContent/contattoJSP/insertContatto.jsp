@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Inserimento contatto</title>
 </head>
 <body>
 <jsp:useBean id="contattoBean" class="it.beije.cilacap.esercizi.myRubrica.Contatto2" scope="session" />
@@ -20,7 +20,7 @@ Telefono: <jsp:getProperty name="contattoBean" property="telefono"/><br>
 Email: <jsp:getProperty name="contattoBean" property="email"/>
 <br><br>
 <a href="formContatto.jsp">MODIFICA</a>
-<a href="conferma.jsp">CONFERMA</a>
+<a href="../SaveInDb">CONFERMA</a>
 
 </body>
 </html>
