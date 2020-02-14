@@ -5,6 +5,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>CONFERMA INSERIMENTO DATI</title>
+         <link href="styleRubrica.css" type="text/css" rel="stylesheet" />
+
 </head>
 <body>
 
@@ -12,6 +14,7 @@
 		scope="session" />
 
 	<h1>HO SALVATO I SEGUENTI DATI:</h1>
+	<div class="div-textcolor">
 	NOME :
 	<jsp:getProperty name="contatto" property="nome" /><br> COGNOME :
 	<jsp:getProperty name="contatto" property="cognome" /><br>
@@ -28,6 +31,6 @@
 	%>
 
 	<a href="formcontatto.jsp">INSERISCI NUOVI DATI</a>
-
+</div>
 </body>
 </html>

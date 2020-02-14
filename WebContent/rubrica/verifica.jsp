@@ -5,8 +5,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>VEDI DATI INSERITI</title>
+         <link href="styleRubrica.css" type="text/css" rel="stylesheet" />
+
 </head>
 <body>
+
 
 	<jsp:useBean id="contatto" class="it.beije.cilacap.web.Contatto"
 		scope="session" />
@@ -19,6 +22,7 @@
 	%>
 
 	<h1>VERIFICA I DATI INSERITI</h1>
+	<div class="dive-textcolor">
 	NOME :
 	<jsp:getProperty name="contatto" property="nome" /><br> COGNOME :
 	<jsp:getProperty name="contatto" property="cognome" /><br>
@@ -27,14 +31,14 @@
 	:
 	<jsp:getProperty name="contatto" property="email" /><br>
 	<br>
-	<a href="../Salva">Conferma</a>
+	<a href="../Salva" color: "white">Conferma</a>
 
 
 
 	<form action="formcontatto.jsp" type="POST">
 		<input type="submit" value="Modifica">
 	</form>
-
+</div>
 
 </body>
 </html>

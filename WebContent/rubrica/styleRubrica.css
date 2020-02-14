@@ -1,0 +1,18 @@
+@charset "ISO-8859-1";
+
+body {
+	background-color:#0B3D91;
+		 text-align: center;
+	
+}
+h1{
+	color:#FC3D21;
+}
+
+
+.div-textcolor{
+	color: white;	
+}
+a {
+  color: white;
+}

@@ -1,12 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Form Contatto</title>
+         <link href="styleRubrica.css" type="text/css" rel="stylesheet" />
+
 </head>
+
+
 <body>
+<div class="div-textcolor">
 	<%!String nome = "es. Mario";%>
 	<%!String cognome = "es. Rossi";%>
 	<%!String telefono = "es. 3588469850";%>
@@ -38,7 +44,7 @@
 			value=<%=contatto.getEmail() != null ? contatto.getEmail() : ""%>><br>
 		<br> <input type="submit" value="Salva">
 	</form>
-
+</div>
 
 </body>
 </html>
