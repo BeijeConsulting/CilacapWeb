@@ -115,37 +115,37 @@ public class DBtools {
 		
 	}
 	
-//	public static boolean insertContatto(Contatto contatto) throws ClassNotFoundException {
-//		Connection connection = null;
-//		PreparedStatement pstmt = null;
-//		boolean esito = false;
-//		
-//		try {
-//			connection = it.beije.cilacap.myrubrica.DBManager.getMySqlConnection(DBManager.DB_URL, DBManager.DB_USER, DBManager.DB_PASSWORD);
-//			pstmt = connection.prepareStatement("INSERT into cilacap.rubrica (nome,cognome,telefono,email) VALUES (?,?,?,?)");
-//			pstmt.setString(1, contatto.getNome());
-//			pstmt.setString(2, contatto.getCognome());
-//			pstmt.setString(3, contatto.getTelefono());
-//			pstmt.setString(4, contatto.getEmail());
-//			
-//			esito = pstmt.execute();
-//			System.out.println(pstmt.getUpdateCount());
-//			
-//			//pstmt.executeUpdate();
-//			
-//		} catch (SQLException sqlEx) {
-//			System.out.println("PROBLEMA : " + sqlEx);
-//		} finally {
-//			try {
-//				pstmt.close();
-//				connection.close();
-//			} catch (SQLException finEx) {
-//				System.out.println("PROBLEMA : " + finEx);
-//				finEx.printStackTrace();
-//			}
-//		}
-//		return esito;
-//	}
+	public static boolean insertContatto(Contatto contatto) throws ClassNotFoundException {
+		Connection connection = null;
+		PreparedStatement pstmt = null;
+		boolean esito = false;
+		
+		try {
+			connection = it.beije.cilacap.myrubrica.DBManager.getMySqlConnection(DBManager.DB_URL, DBManager.DB_USER, DBManager.DB_PASSWORD);
+			pstmt = connection.prepareStatement("INSERT into cilacap.rubrica (nome,cognome,telefono,email) VALUES (?,?,?,?)");
+			pstmt.setString(1, contatto.getNome());
+			pstmt.setString(2, contatto.getCognome());
+			pstmt.setString(3, contatto.getTelefono());
+			pstmt.setString(4, contatto.getEmail());
+			
+			esito = pstmt.execute();
+			System.out.println(pstmt.getUpdateCount());
+			
+			//pstmt.executeUpdate();
+			
+		} catch (SQLException sqlEx) {
+			System.out.println("PROBLEMA : " + sqlEx);
+		} finally {
+			try {
+				pstmt.close();
+				connection.close();
+			} catch (SQLException finEx) {
+				System.out.println("PROBLEMA : " + finEx);
+				finEx.printStackTrace();
+			}
+		}
+		return esito;
+	}
 	
 	
 	

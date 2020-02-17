@@ -13,7 +13,7 @@
 	<h1>LOGIN PAGE</h1>
 	<h6>Cilacap</h6>
 <h1>LOGIN PAGE</h1>
-<h6>SESSION ID : <%= session.getId() %></h6> refs/remotes/origin/master
+<h6>SESSION ID : <%= session.getId() %></h6> 
 
 	<p>inserisci di seguito i tuoi dati</p>
 	<form action="test" method="POST">
@@ -28,7 +28,6 @@
   Password: <input type="password" name="password"><br><br>
   <input type="submit" value="INVIA">
 </form>
-refs/remotes/origin/master
 
 </body>
 </html>
