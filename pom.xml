@@ -26,6 +26,16 @@
   </build>
   <dependencies>
   	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-web</artifactId>
+  		<version>5.1.7.RELEASE</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-webmvc</artifactId>
+  		<version>5.2.0.RELEASE</version>
+  	</dependency>
+  	<dependency>
   		<groupId>org.hibernate</groupId>
   		<artifactId>hibernate-core</artifactId>
   		<version>5.4.8.Final</version>
