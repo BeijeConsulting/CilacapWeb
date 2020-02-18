@@ -11,25 +11,51 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import it.beije.cilacap.web.rubrica.Contatto;
 
 
 @Controller
 public class HomeController {
 	
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
+/*	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(HttpServletRequest request) {
 		System.out.println("index Page Requested : " + request.getRequestURI());
 
 		return "index";
-	}
+	}*/
 
-	@RequestMapping(value = "/index2", method = RequestMethod.GET)
+/*	@RequestMapping(value = "/index2", method = RequestMethod.GET)
 	public String index() {
 
 		return "index";
+	}*/
+	
+	@RequestMapping(value = "/index", method = RequestMethod.GET) // index è una parola chiave prende quello che indichi nel name="prefix" value="/WEB-INF/views/"
+	public String index(HttpServletRequest request) {
+
+		return "formcontatto";
 	}
+
+
+	@RequestMapping(value = "/anto", method = RequestMethod.POST)
+	public String homepage(Model model, HttpServletRequest request, HttpServletResponse response, @Validated Contatto contatto) {
+
+		
+		model.addAttribute("nome",contatto.getNome());
+		model.addAttribute("cognome", contatto.getCognome());
+		model.addAttribute("telefono", contatto.getTelefono());
+		model.addAttribute("email", contatto.getEmail());
+		
+		model.addAttribute("contatto",contatto);
+		
+		return "visualizza";
+	}
+
+
 
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String homepage(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response) {
