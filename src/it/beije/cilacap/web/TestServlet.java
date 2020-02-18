@@ -10,6 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/heads/Padawan03
 
 /**
  * Servlet implementation class TestServlet
