@@ -4,6 +4,8 @@
    </head>
    
    <body>
-      <h2>ciao</h2>
+
+      <h3>${serverTime}</h3>
+      <h4>${locale.country} - ${locale.language}</h4>
    </body>
 </html>

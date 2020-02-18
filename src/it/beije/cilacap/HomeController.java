@@ -33,6 +33,7 @@ public class HomeController {
 		String dataFormattato = dateFormat.format(date);
 
 		model.addAttribute("serverTime", dataFormattato);
+		model.addAttribute("locale", locale);
 
 		return "home";
 	}
@@ -43,6 +44,14 @@ public class HomeController {
 
 		response.setContentType("text/plain");
 		response.getWriter().append("CIAO");
+	}
+	
+	@RequestMapping(value = "/pippo", method = RequestMethod.GET)
+	public String returnPippo(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response) throws IOException {
+		System.out.println("Home Page Requested, country = " + locale.getCountry());
+		System.out.println("Home Page Requested, language = " + locale.getLanguage());
+		
+		return "pippo";
 	}
 
 }
