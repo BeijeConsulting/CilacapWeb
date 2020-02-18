@@ -11,8 +11,12 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import it.beije.cilacap.model.Domanda;
 
 
 @Controller
@@ -21,12 +25,6 @@ public class HomeController {
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(HttpServletRequest request) {
 		System.out.println("index Page Requested : " + request.getRequestURI());
-
-		return "index";
-	}
-
-	@RequestMapping(value = "/index2", method = RequestMethod.GET)
-	public String index() {
 
 		return "index";
 	}
@@ -51,6 +49,25 @@ public class HomeController {
 	public void returnTXT(HttpServletResponse response) throws IOException {
 		response.setContentType("text/plain");
 		response.getWriter().append("CIAO");
+	}
+	
+	@RequestMapping(value = "/CreaDomanda", method = RequestMethod.GET)
+	public String domanda(HttpServletRequest request) {
+		System.out.println("index Page Requested : " + request.getRequestURI());
+		
+		return "CreaDomanda";
+	}
+	
+	@RequestMapping(value = "/conferma", method = RequestMethod.POST)
+	public String conferma(HttpServletRequest request, Model model, @Validated Domanda domanda) {
+		System.out.println("index Page Requested : " + request.getRequestURI());
+		
+		System.out.println("testo :" + domanda.getTesto());
+		
+		model.addAttribute("domanda", domanda);
+		
+		
+		return "conferma";
 	}
 
 }
