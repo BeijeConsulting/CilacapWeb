@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<jsp:useBean id="contatto" class="it.beije.cilacap.web.rubrica.Contatto" scope="session" />
+<jsp:useBean id="contatto" class="it.beije.cilacap.utils.Contatto" scope="session" />
 <jsp:setProperty name="contatto" property="nome"/>
 <jsp:setProperty name="contatto" property="cognome"/>
 <jsp:setProperty name="contatto" property="telefono"/>

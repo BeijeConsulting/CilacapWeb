@@ -1,4 +1,4 @@
-package it.beije.cilacap.web.rubrica;
+package it.beije.cilacap.utils;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
