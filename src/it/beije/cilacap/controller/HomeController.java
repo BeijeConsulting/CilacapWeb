@@ -34,7 +34,8 @@ public class HomeController {
 		String dataFormattato = dateFormat.format(date);
 
 		model.addAttribute("serverTime", dataFormattato);
-
+		model.addAttribute("locale", locale);
+		model.addAttribute("country", locale.getCountry());
 		return "home";
 	}
 
