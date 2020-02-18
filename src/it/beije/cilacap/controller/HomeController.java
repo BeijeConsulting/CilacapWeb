@@ -32,7 +32,7 @@ public class HomeController {
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		String dataFormattato = dateFormat.format(date);
 
-		model.addAttribute("serverTime", dataFormattato);
+		model.addAttribute("serverTime", dataFormattato); //Attributo aggiunto. D'ora in poi potrò usare questa variabile nel jsp
 
 		return "home";
 	}
@@ -42,7 +42,7 @@ public class HomeController {
 		System.out.println("index Page Requested : " + request.getRequestURI());
 
 		response.setContentType("text/plain");
-		response.getWriter().append("CIAO");
+		response.getWriter().append("Cyka Blyat");
 	}
 
 }
