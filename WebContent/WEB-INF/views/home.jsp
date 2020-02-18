@@ -4,8 +4,8 @@
    </head>
    
    <body>
-  
-      <h2>${serverTime} - ${country}</h2>
-      <h3>${locale.country} - ${locale.language}</h3>
+      <h1>${country} - ${language}</h1>
+      <h2>${serverTime}</h2>
+      <h3>${locale.country}</h2>
    </body>
 </html>

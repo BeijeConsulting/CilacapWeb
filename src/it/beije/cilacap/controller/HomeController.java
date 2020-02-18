@@ -7,6 +7,7 @@ import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,8 +20,14 @@ import org.springframework.web.context.annotation.SessionScope;
 public class HomeController {
 	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
-	public String index(HttpServletRequest request, HttpServletResponse response) {
+	public String index(HttpServletRequest request) {
 		System.out.println("index Page Requested : " + request.getRequestURI());
+
+		return "index";
+	}
+
+	@RequestMapping(value = "/index2", method = RequestMethod.GET)
+	public String index() {
 
 		return "index";
 	}
@@ -33,6 +40,9 @@ public class HomeController {
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		String dataFormattato = dateFormat.format(date);
 
+		model.addAttribute("locale", locale);
+		model.addAttribute("country", locale.getCountry());
+		model.addAttribute("language", locale.getLanguage());
 		model.addAttribute("serverTime", dataFormattato);
 		model.addAttribute("locale", locale);
 		model.addAttribute("country", locale.getCountry());
@@ -40,9 +50,7 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/txt", method = RequestMethod.GET)
-	public void returnTXT(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		System.out.println("index Page Requested : " + request.getRequestURI());
-
+	public void returnTXT(HttpServletResponse response) throws IOException {
 		response.setContentType("text/plain");
 		response.getWriter().append("CIAO");
 	}
