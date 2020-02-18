@@ -4,6 +4,6 @@
    </head>
    
    <body>
-      <h2>${serverTime}</h2>
+      <h2>ciao</h2>
    </body>
 </html>

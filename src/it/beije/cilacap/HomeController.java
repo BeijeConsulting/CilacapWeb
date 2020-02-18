@@ -1,4 +1,4 @@
-package it.beije.cilacap.controller;
+package it.beije.cilacap;
 
 import java.io.IOException;
 import java.text.DateFormat;
