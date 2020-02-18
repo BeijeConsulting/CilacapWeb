@@ -10,7 +10,7 @@
 
 <h1>FORM CONTATTO</h1>
 
-<form action="verifica.jsp" method="POST">
+<form action="rubricaContatto" method="POST">
   NOME: <input type="text" name="nome"><br><br>
   COGNOME: <input type="text" name="cognome"><br><br>
   TELEFONO: <input type="text" name="telefono"><br><br>
