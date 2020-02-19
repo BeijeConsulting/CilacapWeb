@@ -24,40 +24,26 @@ public class HomeController {
 	
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(HttpServletRequest request) {
-		System.out.println("index Page Requested : " + request.getRequestURI());
-
-		return "index";
+		//System.out.println("index Page Requested : " + request.getRequestURI());
+		return "formcontatto";
 	}
 
-	@RequestMapping(value = "/form", method = RequestMethod.GET)
-	public String form() {
-
-		return "form";
+	@RequestMapping(value = "/conferma", method = RequestMethod.GET)
+	public String conferma(Model model, HttpSession session, HttpServletRequest request) {
+		return "conferma";
 	}
 
-	@RequestMapping(value = "/vedi", method = RequestMethod.POST)
-	public String vedi(Model model, HttpServletRequest request, @RequestParam(name = "nome", required = false) String nome) {
-		System.out.println("nome : " + nome);
-		
-		//....
-		
-		model.addAttribute("nome", nome);
-
-		return "vedi";
-	}
-
-	@RequestMapping(value = "/vedicontatto", method = RequestMethod.POST)
-	public String vedi(Model model, HttpServletRequest request, @Validated Contatto contatto) {
+	@RequestMapping(value = "/verifica", method = RequestMethod.POST)
+	public String vedi(Model model, HttpSession session, HttpServletRequest request, @Validated Contatto contatto) {
 		System.out.println("nome : " + contatto.getNome());
 		System.out.println("cognome : " + contatto.getCognome());
 		System.out.println("telefono : " + contatto.getTelefono());
 		System.out.println("email : " + contatto.getEmail());
 		
-		//....
-		
+		session.setAttribute("contatto", contatto);
 		model.addAttribute("contatto", contatto);
 
-		return "vedicontatto";
+		return "verifica";
 	}
 
 	@RequestMapping(value = "/home", method = RequestMethod.GET)

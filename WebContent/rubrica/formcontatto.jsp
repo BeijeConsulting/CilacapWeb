@@ -10,11 +10,11 @@
 
 <h1>FORM CONTATTO</h1>
 
-<form action="verifica.jsp" method="POST">
-  NOME: <input type="text" name="nome"><br><br>
-  COGNOME: <input type="text" name="cognome"><br><br>
-  TELEFONO: <input type="text" name="telefono"><br><br>
-  EMAIL: <input type="text" name="email"><br><br>
+<form action="verifica" method="POST">
+  NOME: <input type="text" value="${contatto.nome}" name="nome"><br><br>
+  COGNOME: <input type="text" value="${contatto.cognome}" name="cognome"><br><br>
+  TELEFONO: <input type="text" value="${contatto.telefono}" name="telefono"><br><br>
+  EMAIL: <input type="text" value="${contatto.email}" name="email"><br><br>
   <input type="submit" value="CONTINUA">
 </form>
 

@@ -8,15 +8,16 @@
 </head>
 <body>
 
-<jsp:useBean id="contatto" class="it.beije.cilacap.web.rubrica.Contatto" scope="session" />
+<!--<jsp:useBean id="contatto" class="it.beije.cilacap.web.rubrica.Contatto" scope="session" />-->
 
-<h1>HO SALVATO I SEGUENTI DATI:</h1>
-NOME : <jsp:getProperty name="contatto" property="nome"/><br>
-COGNOME : <jsp:getProperty name="contatto" property="cognome"/><br>
-TELEFONO : <jsp:getProperty name="contatto" property="telefono"/><br>
-EMAIL : <jsp:getProperty name="contatto" property="email"/><br>
+<h1>HO SALVATO IL SEGUENTE CONTATTO:</h1>
+NOME : ${contatto.nome}<!--<jsp:getProperty name="contatto" property="nome"/>--><br>
+COGNOME : ${contatto.cognome}<br>
+TELEFONO : ${contatto.telefono}<br>
+EMAIL : ${contatto.email}<br>
 <br>
-<a href="formcontatto.jsp">INSERISCI NUOVI DATI</a>
+<% session.removeAttribute("contatto"); %>
+<a href="index">INSERISCI NUOVI DATI</a>
 
 </body>
 </html>
