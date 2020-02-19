@@ -14,13 +14,15 @@ import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 
 import it.beije.cilacap.web.rubrica.Contatto;
 
 
 @Controller
 public class HomeController {
-	
+	Contatto contatto = new Contatto();
 /*	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(HttpServletRequest request) {
 		System.out.println("index Page Requested : " + request.getRequestURI());
@@ -35,24 +37,29 @@ public class HomeController {
 	}*/
 	
 	@RequestMapping(value = "/index", method = RequestMethod.GET) // index è una parola chiave prende quello che indichi nel name="prefix" value="/WEB-INF/views/"
-	public String index(HttpServletRequest request) {
-
+	public String index(HttpServletRequest request,Model model,@Validated Contatto contatto) {
+		
+		model.addAttribute("contatto",contatto);
 		return "formcontatto";
 	}
 
 
 	@RequestMapping(value = "/anto", method = RequestMethod.POST)
-	public String homepage(Model model, HttpServletRequest request, HttpServletResponse response, @Validated Contatto contatto) {
+	public String homepage(Model model, HttpServletRequest request, HttpServletResponse response,@Validated Contatto contatto) {
 
 		
-		model.addAttribute("nome",contatto.getNome());
-		model.addAttribute("cognome", contatto.getCognome());
-		model.addAttribute("telefono", contatto.getTelefono());
-		model.addAttribute("email", contatto.getEmail());
-		
-		model.addAttribute("contatto",contatto);
+		this.contatto=contatto;
+		System.out.println(this.contatto.getNome());
 		
 		return "visualizza";
+	}
+	
+	@RequestMapping(value = "/riconferma", method = RequestMethod.GET)
+	public String riconferma(Model model, HttpServletRequest request, HttpServletResponse response, @Validated Contatto contatto) {
+
+		
+		
+		return "riconferma";
 	}
 
 

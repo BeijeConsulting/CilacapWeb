@@ -1,4 +1,3 @@
-
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -10,11 +9,11 @@
 
 
 
-<form action="anto" method="POST">  <!-- anto è quello che gli do io(qualsiasi cosa) in entrata, che deve corrispondere al value = "/anto" del controller  -->
-  NOME: <input type="text" name="nome"><br><br>
-  COGNOME: <input type="text" name="cognome"><br><br>
-  TELEFONO: <input type="text" name="telefono"><br><br>
-  EMAIL: <input type="text" name="email"><br><br>
+<form action="anto" method="POST">  <!-- "anto" è quello che gli do io(qualsiasi cosa) in entrata, che deve corrispondere al value = "/anto" del controller  -->
+  NOME: <input type="text" name="nome" value="${contatto.nome}"><br><br>
+  COGNOME: <input type="text" name="cognome" value="${contatto.cognome}"><br><br> 
+  TELEFONO: <input type="text" name="telefono" value="${contatto.telefono}"><br><br>
+  EMAIL: <input type="text" name="email" value="${contatto.email}"><br><br>
   <input type="submit" value="CONTINUA">
 </form>
 
