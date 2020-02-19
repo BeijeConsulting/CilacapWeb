@@ -1,4 +1,4 @@
-package it.beije.cilacap.web;
+package it.beije.cilacap.web.rubrica.model;
 
 
 import javax.persistence.Column;

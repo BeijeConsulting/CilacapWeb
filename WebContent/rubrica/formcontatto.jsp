@@ -20,7 +20,7 @@
 
 
 
-	<jsp:useBean id="contatto" class="it.beije.cilacap.web.Contatto"
+	<jsp:useBean id="contatto" class="it.beije.cilacap.web.rubrica.model.Contatto"
 		scope="session" />
 	<jsp:setProperty property="nome" name="contatto" />
 	<jsp:setProperty property="cognome" name="contatto" />

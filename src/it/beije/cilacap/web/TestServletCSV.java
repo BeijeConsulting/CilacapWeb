@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import it.beije.cilacap.web.ParserCSV;
+import it.beije.cilacap.web.rubrica.model.Contatto;
 
 
 

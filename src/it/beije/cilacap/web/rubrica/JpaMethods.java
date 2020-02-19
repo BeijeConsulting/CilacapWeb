@@ -9,6 +9,7 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import it.beije.cilacap.web.*;
+import it.beije.cilacap.web.rubrica.model.Contatto;
 
 public class JpaMethods {
 

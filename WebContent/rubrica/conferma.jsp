@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<jsp:useBean id="contatto" class="it.beije.cilacap.web.Contatto"
+	<jsp:useBean id="contatto" class="it.beije.cilacap.web.rubrica.model.Contatto"
 		scope="session" />
 
 	<h1>HO SALVATO I SEGUENTI DATI:</h1>

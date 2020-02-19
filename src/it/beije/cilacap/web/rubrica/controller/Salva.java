@@ -1,4 +1,4 @@
-package it.beije.cilacap.web.rubrica;
+package it.beije.cilacap.web.rubrica.controller;
 
 import java.io.IOException;
 import java.sql.SQLIntegrityConstraintViolationException;
@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import it.beije.cilacap.web.Contatto;
+import it.beije.cilacap.web.rubrica.JpaMethods;
+import it.beije.cilacap.web.rubrica.model.Contatto;
 
 /**
  * Servlet implementation class Salva
