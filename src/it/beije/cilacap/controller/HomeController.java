@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
@@ -22,12 +23,31 @@ import it.beije.cilacap.web.rubrica.Contatto;
 @Controller
 public class HomeController {
 	
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index(HttpServletRequest request) {
 		System.out.println("index Page Requested : " + request.getRequestURI());
 
-		return "index";
+		return "MyFormContatto";
 	}
+	
+	@RequestMapping(value = "/MyFormContatto", method = RequestMethod.POST)
+		public String MyFormContatto(Model model, HttpServletRequest request,@Validated  HttpSession session, @Validated Contatto contatto) {
+		
+		System.out.println("MyForm: " + session.getAttribute("contatto"));
+		model.addAttribute("contatto", contatto);
+		model.addAttribute("session", session.getAttribute("contatto"));
+		
+		return "MyFormContatto";
+	}
+	
+	@RequestMapping(value = "/Decisione", method = RequestMethod.POST)
+	public String decisione(Model model, HttpServletRequest request, HttpSession session, @Validated Contatto contatto) {
+	
+	session.setAttribute("contatto", contatto);
+	System.out.println("Decisione: " + session.getAttribute("contatto"));
+	
+	return "Decisione";
+}	
 
 	@RequestMapping(value = "/form", method = RequestMethod.GET)
 	public String form() {
