@@ -14,6 +14,7 @@
 <jsp:setProperty name="userBean" property="email"/>
 <jsp:setProperty name="userBean" property="telefono"/>
 
+
 <form action="auth.jsp" method="POST">
   Nome: <input type="text" name="nome" value='<jsp:getProperty property="nome" name="userBean"/>'><br><br>
   Cognome: <input type="text" name="cognome" value='<jsp:getProperty property="cognome" name="userBean"/>'><br><br>
