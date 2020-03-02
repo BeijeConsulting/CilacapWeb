@@ -36,4 +36,14 @@ public class RubricaRestController {
 		
 		return contatti;
 	}
+	
+	@RequestMapping(value = "/rubricajpa", method = RequestMethod.GET)
+	public @ResponseBody List<Contatto> getRubricaJPA() {
+		
+		List<Contatto> listaContatti = new ArrayList<>();
+		
+		
+		
+		return listaContatti;
+	}
 }
