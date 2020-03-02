@@ -66,13 +66,7 @@ public class RubricaRestController {
 			response.setStatus(204);
 			return null;
 		}
-
-		Contatto contatto = new Contatto();
-		contatto.setId(id);
-		contatto.setNome("Mario");
-		contatto.setCognome("Rossi");
-		contatto.setTelefono("001202022");
-		contatto.setNome("m.rossi@beije.it");
+		Contatto contatto = MyRubricaCSV_XML_DB_JPA.leggiContatto(id);
 		
 		return contatto;
 	}
@@ -81,9 +75,8 @@ public class RubricaRestController {
 			consumes = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody Contatto createContatto(@RequestBody Contatto contatto, HttpServletResponse response) {
 		//inserisco contatto in DB, XML, CSV...
-		
-		contatto.setId(10);
-		
+		int id = MyRubricaCSV_XML_DB_JPA.inserisciContatto(contatto);
+		contatto.setId(id);		
 		return contatto;
 	}
 

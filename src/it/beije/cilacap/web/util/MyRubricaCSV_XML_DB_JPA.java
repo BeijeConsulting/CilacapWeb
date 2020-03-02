@@ -26,6 +26,40 @@ public class MyRubricaCSV_XML_DB_JPA {
 		return listaContatti;
 	}	
 	
+	@SuppressWarnings("unchecked")
+	public static Contatto leggiContatto(int id) {
+		
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("CilacapUnit");
+		EntityManager entityManager = factory.createEntityManager();
+	
+		// esempio query JPQL
+		String jpql = "SELECT c FROM Contatto as c WHERE c.id=:id";
+		Query query = entityManager.createQuery(jpql);
+		query.setParameter("id", id);
+		List<Contatto> listaContatti = query.getResultList();
+		return listaContatti.get(0);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static int inserisciContatto(Contatto c) {
+	
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("CilacapUnit");
+		EntityManager entityManager = factory.createEntityManager();
+		entityManager.getTransaction().begin();
+		entityManager.persist(c);
+		entityManager.getTransaction().commit();
+		String jpql = "SELECT c FROM Contatto as c WHERE c.nome=:nome AND c.cognome=:cognome AND c.telefono=:telefono AND c.email=:email";
+		Query query = entityManager.createQuery(jpql);
+		query.setParameter("nome", c.getNome());
+		query.setParameter("cognome", c.getCognome());
+		query.setParameter("telefono", c.getTelefono());
+		query.setParameter("email", c.getEmail());
+		List<Contatto> listaContatti = query.getResultList();
+		int idContatto = listaContatti.get(0).getId();
+		entityManager.clear();
+		return idContatto;
+	}
+	
 	public static void readFromDBWriteInCSV() throws Exception {
 		List<Contatto> listaContatti = MyRubricaCSV_XML_DB_JPA.leggiContatti();
 		MyRubricaCSV_XML_General.esportaRubricaInCSV(Utility.choosePath(false), listaContatti);

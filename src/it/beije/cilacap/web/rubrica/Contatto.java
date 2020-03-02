@@ -23,11 +23,12 @@ public class Contatto {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
+	private Integer id;
 //	@Id
 //	@GeneratedValue(strategy=GenerationType.IDENTITY)
 //	@Column(name="id")
 	//@JsonIgnore
-	private Integer id;
+	
 	
 	@Column(name="nome")
 	private String nome;
