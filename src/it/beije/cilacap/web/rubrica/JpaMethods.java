@@ -34,9 +34,7 @@ public class JpaMethods {
 
 	public static void inserisciContatti(List<Contatto> listaContatti)
 			throws java.sql.SQLIntegrityConstraintViolationException {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("CilacapWeb");
-		EntityManager entityManager = factory.createEntityManager();
-
+	
 		entityManager.getTransaction().begin();
 		for (int i = 0; i < listaContatti.size(); i++) {
 			Contatto contatto = listaContatti.get(i);
@@ -44,7 +42,7 @@ public class JpaMethods {
 
 		}
 		entityManager.getTransaction().commit();
-		entityManager.close();
+		entityManager.clear();
 
 	}
 	
@@ -53,8 +51,27 @@ public class JpaMethods {
 		Query query=entityManager.createQuery(jpql);
 		query.setParameter("id", id);
 		List<Contatto> lista=query.getResultList();
+		if(lista.size()==0)
+			return null;
 		return lista.get(0);
 		
+	}
+	
+	public static Integer insertContatto(Contatto c) {
+		entityManager.getTransaction().begin();
+		entityManager.persist(c);
+		entityManager.getTransaction().commit();
+		entityManager.clear();
+		
+		String jpql="SELECT c.id FROM Contatto as c WHERE c.nome=:nome AND c.cognome=:cognome AND c.email=:email AND c.telefono=:telefono";
+		Query query=entityManager.createQuery(jpql);
+		query.setParameter("nome", c.getNome());
+		query.setParameter("cognome", c.getCognome());
+		query.setParameter("email", c.getEmail());
+		query.setParameter("telefono", c.getTelefono());
+		
+		List <Integer> lista= query.getResultList();
+		return lista.get(0) ;
 	}
 	
 //	public static void aggiornaContatti(List<Contatto> listaContatti) {

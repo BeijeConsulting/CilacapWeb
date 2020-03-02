@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -69,40 +70,45 @@ public class RubricaRestController {
 	}
 	
 	@RequestMapping(value="/rubricaDB/{id}", method=RequestMethod.GET)
-	public @ResponseBody Contatto getContattoDaDB(@PathVariable int id) {
+	public @ResponseBody Contatto getContattoDaDB(@PathVariable int id, HttpServletResponse response) {
 		
-		return JpaMethods.getContatto(id);
+		Contatto c =  JpaMethods.getContatto(id);
+		if(c==null) 
+			response.setStatus(204);	
 		
+		return (Contatto) c;
 		
 	}
 	
 	
-
-	@RequestMapping(value = "/rubrica/{id}", method = RequestMethod.GET)
-	public @ResponseBody Contatto getContatto(@PathVariable Integer id, HttpServletResponse response) {
-		
-		if (id > 10) {
-			response.setStatus(204);
-			return null;
-		}
-
-		Contatto contatto = new Contatto();
-		contatto.setId(id);
-		contatto.setNome("Mario");
-		contatto.setCognome("Rossi");
-		contatto.setTelefono("001202022");
-		contatto.setNome("m.rossi@beije.it");
-		
-		return contatto;
-	}
-	
+// fatto da ivo:
+//	@RequestMapping(value = "/rubrica/{id}", method = RequestMethod.GET)
+//	public @ResponseBody Contatto getContatto(@PathVariable Integer id, HttpServletResponse response) {
+//		
+//		if (id > 10) {
+//			response.setStatus(204);
+//			return null;
+//		}
+//
+//		Contatto contatto = new Contatto();
+//		contatto.setId(id);
+//		contatto.setNome("Mario");
+//		contatto.setCognome("Rossi");
+//		contatto.setTelefono("001202022");
+//		contatto.setNome("m.rossi@beije.it");
+//		
+//		return contatto;
+//	}
+//	
 	@RequestMapping(value = "/rubrica", method = RequestMethod.POST,
 			consumes = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody Contatto createContatto(@RequestBody Contatto contatto, HttpServletResponse response) {
 		//inserisco contatto in DB, XML, CSV...
 		
-		contatto.setId(10);
 		
+		Integer  id= JpaMethods.insertContatto(contatto);
+//		contatto.setId(10);
+		contatto.setId(id);
 		return contatto;
 	}
 
