@@ -21,6 +21,7 @@ import org.xml.sax.SAXException;
 import it.beije.cilacap.esercizi.myRubrica.*;
 
 import it.beije.cilacap.web.rubrica.Contatto;
+import net.bytebuddy.description.DeclaredByType;
 
 @RestController
 public class RubricaRestController {
@@ -73,31 +74,38 @@ public class RubricaRestController {
 	}
 
 	@RequestMapping(value = "/rubrica/{id}", method = RequestMethod.GET)
-	public @ResponseBody Contatto getContatto(@PathVariable Integer id, HttpServletResponse response) {
+	public @ResponseBody Contatto2 getContatto(@PathVariable Integer id, HttpServletResponse response) throws ClassNotFoundException, SQLException {
 		
-		if (id > 10) {
-			response.setStatus(204);
-			return null;
+		List<Contatto2> contatti = DBtools.leggiContatti();
+		Contatto2 contattoOk = null;
+		for(Contatto2 c : contatti) {
+			if(c.getId() == id) {
+				contattoOk = c;
+				break;
+			}
 		}
-
-		Contatto contatto = new Contatto();
-		contatto.setId(id);
-		contatto.setNome("Mario");
-		contatto.setCognome("Rossi");
-		contatto.setTelefono("001202022");
-		contatto.setNome("m.rossi@beije.it");
-		
-		return contatto;
+				
+		return contattoOk;
 	}
 	
 	@RequestMapping(value = "/rubrica", method = RequestMethod.POST,
 			consumes = MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody Contatto createContatto(@RequestBody Contatto contatto, HttpServletResponse response) {
-		//inserisco contatto in DB, XML, CSV...
+	public @ResponseBody Contatto2 createContatto(@RequestBody Contatto2 contatto, HttpServletResponse response) throws ClassNotFoundException, SQLException {
+		//inserisco contatto in DB, XML, CSV...		
+		//contatto.setId(10);
 		
-		contatto.setId(10);
+		DBtools.insertContatto(contatto);
 		
-		return contatto;
+		List<Contatto2> contatti = DBtools.leggiContatti();
+		Contatto2 contattoOk = null;
+		for(Contatto2 c : contatti) {
+			if(c.getEmail().equals(contatto.getEmail())) {
+				contattoOk = c;
+				break;
+			}
+		}
+		
+		return getContatto(contattoOk.getId(), response);
 	}
 
 }
