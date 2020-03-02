@@ -54,6 +54,7 @@ public class ParserCSV {
 		while ((row = reader.readLine()) != null) {
 			Contatto c1 = new Contatto();
 			String[] info = row.split(";");
+			System.out.println(info);
 			c1.setCognome(info[0]);
 			c1.setNome(info[1]);
 			c1.setTelefono(info[2]);

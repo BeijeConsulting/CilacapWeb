@@ -14,7 +14,7 @@ import it.beije.cilacap.web.rubrica.model.Contatto;
 public class JpaMethods {
 
 	public static List<Contatto> leggiContatti() {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("CilacapWeb");
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("CilacapUnit");
 		EntityManager entityManager = factory.createEntityManager();
 
 		String jpql = "SELECT c FROM Contatto as c";

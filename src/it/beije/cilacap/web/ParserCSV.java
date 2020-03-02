@@ -54,10 +54,29 @@ public class ParserCSV {
 		while ((row = reader.readLine()) != null) {
 			Contatto c1 = new Contatto();
 			String[] info = row.split(";");
+			try {
 			c1.setCognome(info[0]);
+			} catch (ArrayIndexOutOfBoundsException e) {
+				c1.setCognome(null);
+			}
+			
+			try {
 			c1.setNome(info[1]);
-			c1.setTelefono(info[2]);
-			c1.setEmail(info[3]);
+			}catch(ArrayIndexOutOfBoundsException e) {
+				c1.setNome(null);;
+			}
+			
+			try {
+			c1.setTelefono(info[2]);}
+			catch (ArrayIndexOutOfBoundsException e) {
+				c1.setTelefono(null);
+			}
+			
+			try{
+			c1.setEmail(info[3]);}
+			catch  (ArrayIndexOutOfBoundsException  e ) {
+				c1.setEmail(null);
+			}
 			contactList.add(c1);
 		}
 		return contactList;
