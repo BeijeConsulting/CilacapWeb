@@ -20,33 +20,31 @@ import org.xml.sax.SAXException;
 
 import it.beije.cilacap.esercizi.myRubrica.*;
 
-import it.beije.cilacap.web.rubrica.Contatto;
-import net.bytebuddy.description.DeclaredByType;
 
 @RestController
 public class RubricaRestController {
 
 	@RequestMapping(value = "/rubrica", method = RequestMethod.GET)
-	public @ResponseBody List<Contatto> getRubrica() {
-		List<Contatto> contatti = new ArrayList<Contatto>();
-		
-		Contatto contatto1 = new Contatto();
-		//contatto1.setId(1);
-		contatto1.setNome("Mario");
-		contatto1.setCognome("Rossi");
-		contatto1.setTelefono("001202022");
-		contatto1.setNome("m.rossi@beije.it");
-		
-		Contatto contatto2 = new Contatto();
-		//contatto1.setId(2);
-		contatto2.setNome("Carlo");
-		contatto2.setCognome("Bianchi");
-		contatto2.setTelefono("421412412");
-		contatto2.setNome("c.bianchi@beije.it");
-		
-		contatti.add(contatto1);
-		contatti.add(contatto2);
-		
+	public @ResponseBody List<Contatto2> getRubrica() throws ClassNotFoundException, SQLException {
+		List<Contatto2> contatti = DBtools.leggiContatti();
+//		
+//		Contatto contatto1 = new Contatto();
+//		//contatto1.setId(1);
+//		contatto1.setNome("Mario");
+//		contatto1.setCognome("Rossi");
+//		contatto1.setTelefono("001202022");
+//		contatto1.setNome("m.rossi@beije.it");
+//		
+//		Contatto contatto2 = new Contatto();
+//		//contatto1.setId(2);
+//		contatto2.setNome("Carlo");
+//		contatto2.setCognome("Bianchi");
+//		contatto2.setTelefono("421412412");
+//		contatto2.setNome("c.bianchi@beije.it");
+//		
+//		contatti.add(contatto1);
+//		contatti.add(contatto2);
+//		
 		return contatti;
 	}
 	
