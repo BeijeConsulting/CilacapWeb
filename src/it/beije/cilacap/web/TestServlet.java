@@ -9,10 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> refs/remotes/origin/masterSpringMVC
 /**
  * Servlet implementation class TestServlet
  */
