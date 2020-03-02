@@ -4,16 +4,18 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.context.annotation.SessionScope;
+import org.springframework.web.bind.annotation.RequestParam;
+import it.beije.cilacap.web.rubrica.Contatto;
+
 
 
 //@Controller
@@ -26,10 +28,35 @@ public class HomeController {
 		return "index";
 	}
 
-	@RequestMapping(value = "/index2", method = RequestMethod.GET)
-	public String index() {
+	@RequestMapping(value = "/form", method = RequestMethod.GET)
+	public String form() {
 
-		return "index";
+		return "form";
+	}
+
+	@RequestMapping(value = "/vedi", method = RequestMethod.POST)
+	public String vedi(Model model, HttpServletRequest request, @RequestParam(name = "nome", required = false) String nome) {
+		System.out.println("nome : " + nome);
+		
+		//....
+		
+		model.addAttribute("nome", nome);
+
+		return "vedi";
+	}
+
+	@RequestMapping(value = "/vedicontatto", method = RequestMethod.POST)
+	public String vedi(Model model, HttpServletRequest request, @Validated Contatto contatto) {
+		System.out.println("nome : " + contatto.getNome());
+		System.out.println("cognome : " + contatto.getCognome());
+		System.out.println("telefono : " + contatto.getTelefono());
+		System.out.println("email : " + contatto.getEmail());
+		
+		//....
+		
+		model.addAttribute("contatto", contatto);
+
+		return "vedicontatto";
 	}
 
 	@RequestMapping(value = "/totaleDomande", method = RequestMethod.GET)
