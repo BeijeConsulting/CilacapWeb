@@ -1,44 +1,48 @@
 package it.beije.cilacap.web.rubrica;
 
-//import javax.persistence.Column;
-//import javax.persistence.Entity;
-//import javax.persistence.GeneratedValue;
-//import javax.persistence.GenerationType;
-//import javax.persistence.Id;
-//import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-//@Entity
-//@Table(name="rubrica")
+import org.springframework.transaction.annotation.Transactional;
+
+@Entity
+@Table(name="rubrica")
 public class Contatto {
 
-//	@Id
-//	@GeneratedValue(strategy=GenerationType.IDENTITY)
-//	@Column(name="id")
-	private Integer id;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
+	private Long id;
 	
-//	@Column(name="nome")
+	@Column(name="nome")
 	private String nome;
 
-//	@Column(name="cognome")
+	@Column(name="cognome")
 	private String cognome;
 
-//	@Column(name="telefono")
+	@Column(name="telefono")
 	private String telefono;
 
-//	@Column(name="email")
+	@Column(name="email")
 	private String email;
 	
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
+	@Transactional
 	public String getNome() {
 		return nome;
 	}
+	@Transactional
 	public void setNome(String nome) {
 		this.nome = nome;
 	}

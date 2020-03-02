@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import it.beije.cilacap.service.RubricaService;
 import it.beije.cilacap.web.rubrica.Contatto;
 
 
@@ -25,7 +27,7 @@ public class HomeController {
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(HttpServletRequest request) {
 		System.out.println("index Page Requested : " + request.getRequestURI());
-
+		
 		return "index";
 	}
 
@@ -46,19 +48,19 @@ public class HomeController {
 		return "vedi";
 	}
 
-	@RequestMapping(value = "/vedicontatto", method = RequestMethod.POST)
-	public String vedi(Model model, HttpServletRequest request, @Validated Contatto contatto) {
-		System.out.println("nome : " + contatto.getNome());
-		System.out.println("cognome : " + contatto.getCognome());
-		System.out.println("telefono : " + contatto.getTelefono());
-		System.out.println("email : " + contatto.getEmail());
-		
-		//....
-		
-		model.addAttribute("contatto", contatto);
-
-		return "vedicontatto";
-	}
+//	@RequestMapping(value = "/vedicontatto", method = RequestMethod.POST)
+//	public String vedi(Model model, HttpServletRequest request, @Validated Contatto contatto) {
+//		System.out.println("nome : " + contatto.getNome());
+//		System.out.println("cognome : " + contatto.getCognome());
+//		System.out.println("telefono : " + contatto.getTelefono());
+//		System.out.println("email : " + contatto.getEmail());
+//		
+//		//....
+//		
+//		model.addAttribute("contatto", contatto);
+//
+//		return "vedicontatto";
+//	}
 
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String homepage(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response) {
