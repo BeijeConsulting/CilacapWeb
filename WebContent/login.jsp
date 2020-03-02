@@ -11,7 +11,7 @@
 <h1>LOGIN PAGE</h1>
 <h6>SESSION ID : <%= session.getId() %></h6>
 
-<p>inserisci di seguito i tuoi dati</p>
+<p>Inserisci di seguito i tuoi dati</p>
 
 <form action="login" method="POST">
   Username: <input type="text" name="username"><br><br>

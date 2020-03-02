@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.context.annotation.SessionScope;
 
 
-@Controller
+//@Controller
 public class HomeController {
 	
-	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index(HttpServletRequest request) {
 		System.out.println("index Page Requested : " + request.getRequestURI());
 
@@ -32,7 +32,7 @@ public class HomeController {
 		return "index";
 	}
 
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	@RequestMapping(value = "/totaleDomande", method = RequestMethod.GET)
 	public String homepage(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response) {
 		System.out.println("Home Page Requested, country = " + locale.getCountry());
 		System.out.println("Home Page Requested, language = " + locale.getLanguage());
