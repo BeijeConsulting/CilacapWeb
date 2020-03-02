@@ -7,6 +7,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import it.beije.cilacap.web.rubrica.Contatto;
+
 
 public class MyRubricaCSV_XML_DB_JPA {
 

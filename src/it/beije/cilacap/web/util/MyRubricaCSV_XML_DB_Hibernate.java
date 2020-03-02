@@ -8,6 +8,8 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
+import it.beije.cilacap.web.rubrica.Contatto;
+
 public class MyRubricaCSV_XML_DB_Hibernate {
 
 	@SuppressWarnings("unchecked")

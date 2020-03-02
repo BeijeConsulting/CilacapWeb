@@ -21,6 +21,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+import it.beije.cilacap.web.rubrica.Contatto;
+
 public class MyRubricaCSV_XML_General {
 
 	private static boolean exit = false;

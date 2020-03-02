@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import it.beije.cilacap.web.rubrica.Contatto;
+
 public class MyRubricaCSV_XML_DB_JDBC {
 
 	@SuppressWarnings("unused")

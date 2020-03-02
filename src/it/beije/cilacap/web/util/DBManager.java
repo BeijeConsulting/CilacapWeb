@@ -6,8 +6,8 @@ import java.sql.SQLException;
 
 import org.hibernate.cfg.Configuration;
 
-import it.beije.cilacap.crystal.TestData;
-import it.beije.cilacap.crystal.TestRow;
+import it.beije.cilacap.web.rubrica.Contatto;
+
 
 public class DBManager {
 
@@ -31,13 +31,5 @@ public class DBManager {
 		return configuration;
 	}
 	
-	public static Configuration getHibernateConfigurationCrystal() {
-		
-		Configuration configuration = new Configuration();
-		configuration = configuration.configure()
-				.addAnnotatedClass(TestData.class)
-				.addAnnotatedClass(TestRow.class);
-		return configuration;
-	}
 
 }
