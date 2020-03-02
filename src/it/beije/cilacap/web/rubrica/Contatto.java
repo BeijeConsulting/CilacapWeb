@@ -1,5 +1,8 @@
 package it.beije.cilacap.web.rubrica;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 //import javax.persistence.Column;
 //import javax.persistence.Entity;
 //import javax.persistence.GeneratedValue;
@@ -14,6 +17,7 @@ public class Contatto {
 //	@Id
 //	@GeneratedValue(strategy=GenerationType.IDENTITY)
 //	@Column(name="id")
+	//@JsonIgnore
 	private Integer id;
 	
 //	@Column(name="nome")
