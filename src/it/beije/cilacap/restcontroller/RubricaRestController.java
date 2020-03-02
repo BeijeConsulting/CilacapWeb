@@ -28,29 +28,11 @@ public class RubricaRestController {
 		List<Contatto> contatti = new ArrayList<Contatto>();
 		try {
 			contatti.addAll(ParserXML.getContattiFromFile(PATH));
-			contatti.addAll(ParserJPDB.getContattiFromJPDB());
+//			contatti.addAll(ParserJPDB.getContattiFromJPDB());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		Contatto contatto1 = new Contatto();
-		//contatto1.setId(1);
-		contatto1.setNome("Mario");
-		contatto1.setCognome("Rossi");
-		contatto1.setTelefono("001202022");
-		contatto1.setNome("m.rossi@beije.it");
-		
-		Contatto contatto2 = new Contatto();
-		//contatto1.setId(2);
-		contatto2.setNome("Carlo");
-		contatto2.setCognome("Bianchi");
-		contatto2.setTelefono("421412412");
-		contatto2.setNome("c.bianchi@beije.it");
-		
-		contatti.add(contatto1);
-		contatti.add(contatto2);
-		
 		return contatti;
 	}
 	
@@ -75,9 +57,14 @@ public class RubricaRestController {
 	@RequestMapping(value = "/rubrica", method = RequestMethod.POST,
 			consumes = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody Contatto createContatto(@RequestBody Contatto contatto, HttpServletResponse response) {
-		//inserisco contatto in DB, XML, CSV...
-		
-		contatto.setId(10);
+		List<Contatto> c = new ArrayList<Contatto>();
+		c.add(contatto);
+		try {
+			ParserXML.writeContattiInFile(c, PATH);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		return contatto;
 	}
