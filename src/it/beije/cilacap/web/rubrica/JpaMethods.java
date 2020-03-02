@@ -12,10 +12,10 @@ import it.beije.cilacap.web.*;
 import it.beije.cilacap.web.rubrica.model.Contatto;
 
 public class JpaMethods {
-
+	static EntityManagerFactory   factory = Persistence.createEntityManagerFactory("CilacapUnit");
+	static EntityManager entityManager = factory.createEntityManager();
 	public static List<Contatto> leggiContatti() {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("CilacapUnit");
-		EntityManager entityManager = factory.createEntityManager();
+		
 
 		String jpql = "SELECT c FROM Contatto as c";
 		Query query = entityManager.createQuery(jpql);
@@ -46,6 +46,15 @@ public class JpaMethods {
 		entityManager.getTransaction().commit();
 		entityManager.close();
 
+	}
+	
+	public static Contatto getContatto(int id) {
+		String jpql="SELECT DISTINCT c FROM Contatto as c WHERE c.id=:id";
+		Query query=entityManager.createQuery(jpql);
+		query.setParameter("id", id);
+		List<Contatto> lista=query.getResultList();
+		return lista.get(0);
+		
 	}
 	
 //	public static void aggiornaContatti(List<Contatto> listaContatti) {

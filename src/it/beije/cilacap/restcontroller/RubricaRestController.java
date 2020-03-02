@@ -58,4 +58,13 @@ public class RubricaRestController {
 		
 	}
 	
+	@RequestMapping(value="/rubricaDB/{id}", method=RequestMethod.GET)
+	public @ResponseBody Contatto getContattoDaDB(@PathVariable int id) {
+		
+		return JpaMethods.getContatto(id);
+		
+		
+	}
+	
+	
 }
