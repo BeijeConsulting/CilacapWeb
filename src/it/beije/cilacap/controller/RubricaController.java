@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import it.beije.cilacap.web.rubrica.Contatto;
 import it.beije.cilacap.web.rubrica.Utils;
-@Controller
+//@Controller
 public class RubricaController {
 	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String index(Model model, HttpServletRequest request, HttpSession session) {
