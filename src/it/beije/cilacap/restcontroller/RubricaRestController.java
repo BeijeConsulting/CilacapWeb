@@ -10,29 +10,25 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import it.beije.cilacap.ParserJPDB;
+import it.beije.cilacap.ParserXML;
 import it.beije.cilacap.web.rubrica.Contatto;
 
 @RestController
 public class RubricaRestController {
+	
+	public static final String PATH = "C:\\Users\\Padawan09\\git\\CilacapWeb\\src\\it\\beije\\cilacap\\Rubrica.xml";
 
 	@RequestMapping(value = "/rubrica", method = RequestMethod.GET)
 	public @ResponseBody List<Contatto> getRubrica() {
 		List<Contatto> contatti = new ArrayList<Contatto>();
-		
-		Contatto contatto1 = new Contatto();
-		contatto1.setNome("Mario");
-		contatto1.setCognome("Rossi");
-		contatto1.setTelefono("001202022");
-		contatto1.setNome("m.rossi@beije.it");
-		
-		Contatto contatto2 = new Contatto();
-		contatto2.setNome("Carlo");
-		contatto2.setCognome("Bianchi");
-		contatto2.setTelefono("421412412");
-		contatto2.setNome("c.bianchi@beije.it");
-		
-		contatti.add(contatto1);
-		contatti.add(contatto2);
+		try {
+			contatti.addAll(ParserXML.getContattiFromFile(PATH));
+			contatti.addAll(ParserJPDB.getContattiFromJPDB());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		return contatti;
 	}
